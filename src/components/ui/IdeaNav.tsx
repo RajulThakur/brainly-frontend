@@ -5,6 +5,7 @@ import Trash from '../icons/Trash';
 import Button from './Button';
 interface IdeaNavProps {
   _id: string;
+  isShared?: boolean;
   title: string;
   icon: ReactNode;
   link: string;
@@ -41,6 +42,7 @@ export default function IdeaNav(props: IdeaNavProps) {
             {props.title}
           </a>
         </h1>
+
         <section className="flex items-center gap-2 hover:text-accent-200">
           <Button
             varient="none"

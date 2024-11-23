@@ -1,11 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { IdeaProvider } from './context/IdeaContext';
 import AppLayout from './pages/AppLayout';
+import ProtectedRoute from './pages/ProtectedRoute';
+import SharedPage from './pages/SharedPage';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
-import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './pages/ProtectedRoute';
-import { useAuth } from './context/AuthContext';
 
 function AppRoutes() {
   const { user } = useAuth();
@@ -30,6 +30,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      <Route path="/share" element={<SharedPage />} />
       <Route path="auth">
         <Route
           path="signin"
