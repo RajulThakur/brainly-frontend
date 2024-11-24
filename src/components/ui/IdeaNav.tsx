@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { useIdeas } from '../../context/IdeaContext';
-import Share from '../icons/Share';
+// import Share from '../icons/Share';
 import Trash from '../icons/Trash';
 import Button from './Button';
 import { useAuth } from '../../context/AuthContext';
@@ -46,12 +46,12 @@ export default function IdeaNav(props: IdeaNavProps) {
         </h1>
 
         <section className="flex items-center gap-2 hover:text-accent-200">
-          <Button
+          {/* <Button
             varient="none"
             size="sm"
             light={props.light}
             startIcon={<Share varient="md" />}
-          />
+          /> */}
           <Button
             varient="none"
             size="sm"

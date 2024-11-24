@@ -24,24 +24,20 @@ export default function Sidebar({
               activeFilter === item
                 ? 'scale-105 font-semibold text-accent-200'
                 : ''
-            }`}
+            }` }
             key={item}
+            onClick={() => {
+              if (item === activeFilter) {
+                setActiveFilter('all');
+                navigate(`/app/all`);
+                return;
+              }
+              setActiveFilter(item as IdeaType);
+              navigate(`/app/${item}`);
+            }}
           >
             <Type type={item as IdeaType} />
-            <span
-              className="cursor-pointer select-none"
-              onClick={() => {
-                if (item === activeFilter) {
-                  setActiveFilter('all');
-                  navigate(`/app/all`);
-                  return;
-                }
-                setActiveFilter(item as IdeaType);
-                navigate(`/app/${item}`);
-              }}
-            >
-              {item}
-            </span>
+            <span className="cursor-pointer select-none">{item}</span>
             <div
               className={`absolute -bottom-1 left-0 h-0.5 w-full origin-center bg-accent-200 transition-transform duration-300 ${
                 activeFilter === item

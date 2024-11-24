@@ -3,7 +3,7 @@ export default function Tweet() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth={1.5}
-      fill="none"
+      fill="currentColor"
       stroke="currentColor"
       className={`size-5`}
       viewBox="0 0 50 50"
