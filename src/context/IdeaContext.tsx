@@ -24,12 +24,9 @@ function IdeaProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     async function fetchIdeas() {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/content`, {
-          credentials: 'include',
-          body: JSON.stringify({
-            token: user,
-          }),
-        });
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/content?token=${user}`,
+        );
         if (!res.ok) {
           throw new Error('Failed to fetch ideas');
         }
@@ -40,9 +37,7 @@ function IdeaProvider({ children }: { children: ReactNode }) {
         setIdeas([]);
       }
     }
-    if (user) {
-      fetchIdeas();
-    }
+    fetchIdeas();
   }, [user]);
   return (
     <IdeaContext.Provider value={{ ideas, setIdeas }}>

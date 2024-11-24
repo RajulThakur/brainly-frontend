@@ -2,8 +2,7 @@ import {
   createContext,
   ReactNode,
   useContext,
-  useEffect,
-  useState,
+  useState
 } from 'react';
 
 const AuthContext = createContext<{
@@ -14,20 +13,6 @@ const AuthContext = createContext<{
 function AuthProvider({ children }: { children: ReactNode }) {
   const token: string | null = localStorage.getItem('token') || null;
   const [user, setUser] = useState<string | null>(token);
-  useEffect(() => {
-    async function fetchUser() {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/user`, {
-        credentials: 'include',
-      });
-      if (res.ok) {
-        const { token } = await res.json();
-        setUser(token);
-      }
-    }
-    if (user) {
-      fetchUser();
-    }
-  }, [user]);
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       {children}
