@@ -10,7 +10,8 @@ export default function Sidebar({
   setActiveFilter: React.Dispatch<React.SetStateAction<IdeaType | 'all'>>;
 }) {
   const navigate = useNavigate();
-  const sidebarItems = ['tweets', 'videos', 'links', 'documents', 'tags'];
+  // const sidebarItems = ['tweets', 'videos', 'links', 'documents', 'tags'];
+  const sidebarItems = ['tweets', 'videos', 'links', 'documents'];
   return (
     <aside className="flex h-auto w-screen flex-col gap-3 border-r border-white/20 bg-gradient-to-b from-accent-700/10 to-accent-900/10 px-4 py-2 backdrop-blur-md md:py-2 xl:h-screen xl:w-1/6 xl:max-w-64 xl:gap-6 xl:py-4">
       <h1 className="flex h-[54px] flex-1 items-center gap-2 text-4xl font-bold text-slate-800 lg:flex-none">
