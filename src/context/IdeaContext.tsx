@@ -6,6 +6,7 @@ import {
   useState,
 } from 'react';
 import { IdeaComponentProps } from '../components/ui/IdeaComponent';
+import { useAuth } from './AuthContext';
 
 interface IdeaContextType {
   ideas: IdeaComponentProps[];
@@ -19,6 +20,7 @@ const IdeaContext = createContext<IdeaContextType>({
 
 function IdeaProvider({ children }: { children: ReactNode }) {
   const [ideas, setIdeas] = useState<IdeaComponentProps[]>([]);
+  const { user } = useAuth();
   useEffect(() => {
     async function fetchIdeas() {
       try {
@@ -35,8 +37,10 @@ function IdeaProvider({ children }: { children: ReactNode }) {
         setIdeas([]);
       }
     }
-    fetchIdeas();
-  }, []);
+    if (user) {
+      fetchIdeas();
+    }
+  }, [user]);
   return (
     <IdeaContext.Provider value={{ ideas, setIdeas }}>
       {children}
