@@ -9,6 +9,7 @@ import Button from './Button';
 import { FocusEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { useIdeas } from '../../context/IdeaContext';
 import CrossButton from './CrossButton';
+import { useAuth } from '../../context/AuthContext';
 
 interface AddIdeaProps {
   onClose: () => void;
@@ -36,6 +37,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
   const [newTag, setNewTag] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const { ideas, setIdeas } = useIdeas();
+  const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm<FormData>();
 
   const handleTagClick = (tag: string) => {
@@ -83,6 +85,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
     const submitData = {
       ...data,
       tags: selectedTags,
+      token: user,
     };
     const res = await fetch(`${import.meta.env.VITE_API_URL}/content`, {
       method: 'POST',

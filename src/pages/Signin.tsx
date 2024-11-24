@@ -26,8 +26,10 @@ export default function Signin() {
       credentials:"include"
     });
     const resData = await res.json();
+    console.log(resData);
     if (resData.success) {
-      setUser(resData.id);
+      setUser(resData.token);
+      localStorage.setItem('token', resData.token);
       navigate('/');
     }
   };

@@ -12,19 +12,22 @@ const AuthContext = createContext<{
 }>({ user: null, setUser: () => {} });
 
 function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<string | null>(null);
+  const token: string | null = localStorage.getItem('token') || null;
+  const [user, setUser] = useState<string | null>(token);
   useEffect(() => {
     async function fetchUser() {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/user`, {
         credentials: 'include',
       });
       if (res.ok) {
-        const { userId } = await res.json();
-        setUser(userId);
+        const { token } = await res.json();
+        setUser(token);
       }
     }
-    fetchUser();
-  }, []);
+    if (user) {
+      fetchUser();
+    }
+  }, [user]);
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       {children}
