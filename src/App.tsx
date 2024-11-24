@@ -47,17 +47,17 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <IdeaProvider>
-        <BrowserRouter
-          future={{
-            v7_relativeSplatPath: true,
-            v7_startTransition: true,
-          }}
-        >
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
+      <AuthProvider>
+        <IdeaProvider>
           <AppRoutes />
-        </BrowserRouter>
-      </IdeaProvider>
-    </AuthProvider>
+        </IdeaProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
