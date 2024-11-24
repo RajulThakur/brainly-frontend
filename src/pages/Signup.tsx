@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import Eye from '../components/icons/Eye';
 import Button from '../components/ui/Button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface SignupForm {
   firstName: string;
@@ -11,26 +12,29 @@ interface SignupForm {
 }
 
 export default function Signup() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit } = useForm<SignupForm>();
-  const onSubmit = async (data: SignupForm) => {
-    console.log(data);
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        firstName: data.firstName,
-        lastName: data.lastName,
-        userName: data.userName,
-        password: data.password,
-      }),
-    });
-    const resData = await response.json();
-    console.log(resData);
+  const onSubmit = async (data: SignupForm) => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const resData = await response.json();
+      
+      if (resData.success) {
+        navigate('/auth/signin');
+      }
+    } catch (error) {
+      console.error('Signup failed:', error);
+    }
   };
+
   return (
     <div className="flex h-screen items-center justify-center bg-gradient-to-b from-accent-700 to-accent-900">
       <form
@@ -69,13 +73,23 @@ export default function Signup() {
           <button
             type="button"
             className="absolute right-2 top-1/2 -translate-y-1/2"
-            onClick={() => setShowPassword(!showPassword)}
-          >
+            onClick={() => setShowPassword(!showPassword)}>
             <Eye isOpen={showPassword} />
           </button>
         </div>
 
         <Button varient="primary" text="Sign up" size="lg" />
+        
+        <p className="text-center text-sm">
+          Already have an account?{' '}
+          <button
+            type="button"
+            onClick={() => navigate('/auth/signin')}
+            className="text-blue-600 hover:underline"
+          >
+            Sign in
+          </button>
+        </p>
       </form>
     </div>
   );

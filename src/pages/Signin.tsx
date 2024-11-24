@@ -65,6 +65,17 @@ export default function Signin() {
         </div>
 
         <Button varient="primary" text="Sign in" size="lg" />
+        
+        <p className="text-center text-sm">
+          Don't have an account?{' '}
+          <button
+            type="button"
+            onClick={() => navigate('/auth/signup')}
+            className="text-blue-600 hover:underline"
+          >
+            Create new account
+          </button>
+        </p>
       </form>
     </div>
   );
