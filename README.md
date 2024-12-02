@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+# Brainly - Your Second Brain
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Brainly is a modern web application that helps you organize and share your digital content, acting as your second brain. Built with React, TypeScript, and Vite, it offers a seamless experience for managing various types of content including links, documents, tweets, and videos.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Content Management**: Easily add and organize different types of content:
+  - Links
+  - Documents
+  - Tweets
+  - Videos
 
-## Expanding the ESLint configuration
+- **Smart Organization**:
+  - Tag-based organization system
+  - Categorized views for different content types
+  - Clean and intuitive user interface
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Sharing Capabilities**:
+  - Share your entire collection with others
+  - Generate shareable links
+  - View shared collections
 
-- Configure the top-level `parserOptions` property like this:
+- **Modern Authentication**:
+  - Secure user authentication
+  - Protected routes
+  - Persistent sessions
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+## Tech Stack
+
+- **Frontend**:
+  - React 18.3
+  - TypeScript
+  - Vite
+  - TailwindCSS
+  - React Router DOM
+  - React Hook Form
+
+- **Development Tools**:
+  - ESLint
+  - Prettier
+  - PostCSS
+  - Autoprefixer
+
+## Getting Started
+
+```bash
+git clone <repository-url>
+
+cd brainly-frontend
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Install dependencies**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
+```bash
+npm install
 ```
+
+3. **Set up environment variables**
+
+Create a `.env` file in the root directory:
+
+```bash
+VITE_API_BASE_URL=<API_BASE_URL>
+
+VITE_API_URL=your_api_url
+```
+
+
+4. **Start development server**
+
+```bash
+npm run dev
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+- `npm run format` - Format code with Prettier
+
+## Project Structure
+
+- `/src` - Source code
+  - `/components` - Reusable UI components
+  - `/context` - React context providers
+  - `/pages` - Application pages/routes
+  - `/interface` - TypeScript interfaces
+  - `/helper` - Utility functions
+
+## Acknowledgments
+
+- Built with [Vite](https://vitejs.dev/)
+- Styled with [TailwindCSS](https://tailwindcss.com/)
+- Icons from [Heroicons](https://heroicons.com/)
