@@ -6,6 +6,7 @@ import ProtectedRoute from './pages/ProtectedRoute';
 import SharedPage from './pages/SharedPage';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import Extension from './pages/Extension';
 
 function AppRoutes() {
   const { user } = useAuth();
@@ -39,6 +40,10 @@ function AppRoutes() {
         <Route
           path="signup"
           element={user ? <Navigate to="/app/all" replace /> : <Signup />}
+        />
+        <Route
+          path="extension"
+          element={<Extension />}
         />
       </Route>
     </Routes>
