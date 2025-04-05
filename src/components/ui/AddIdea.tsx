@@ -82,6 +82,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
   }, [isAddingTag]);
 
   const onSubmit = async (data: FormData) => {
+    console.log('data', data);
     const submitData = {
       ...data,
       tags: selectedTags,

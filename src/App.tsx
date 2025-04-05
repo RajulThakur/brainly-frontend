@@ -41,10 +41,7 @@ function AppRoutes() {
           path="signup"
           element={user ? <Navigate to="/app/all" replace /> : <Signup />}
         />
-        <Route
-          path="extension"
-          element={<Extension />}
-        />
+        <Route path="extension" element={<Extension />} />
       </Route>
     </Routes>
   );

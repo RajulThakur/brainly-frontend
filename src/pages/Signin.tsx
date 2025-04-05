@@ -23,7 +23,7 @@ export default function Signin() {
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials:"include"
+      credentials: 'include',
     });
     const resData = await res.json();
     console.log(resData);
@@ -65,7 +65,7 @@ export default function Signin() {
         </div>
 
         <Button varient="primary" text="Sign in" size="lg" />
-        
+
         <p className="text-center text-sm">
           Don't have an account?{' '}
           <button

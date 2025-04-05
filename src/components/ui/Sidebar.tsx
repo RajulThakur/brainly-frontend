@@ -25,7 +25,7 @@ export default function Sidebar({
               activeFilter === item
                 ? 'scale-105 font-semibold text-accent-200'
                 : ''
-            }` }
+            }`}
             key={item}
             onClick={() => {
               if (item === activeFilter) {

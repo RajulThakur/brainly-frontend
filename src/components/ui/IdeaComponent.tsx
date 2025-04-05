@@ -28,7 +28,11 @@ export default function IdeaComponent(idea: IdeaComponentProps) {
         light={idea.light}
       />
       <div className="flex-1 overflow-hidden">
-        <Content type={idea.contentType} content={idea.content} light={idea.light} />
+        <Content
+          type={idea.contentType}
+          content={idea.content}
+          light={idea.light}
+        />
       </div>
       <section className="flex flex-col gap-2">
         <div className="flex flex-wrap gap-1">

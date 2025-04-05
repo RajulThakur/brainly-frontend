@@ -25,7 +25,7 @@ function IdeaProvider({ children }: { children: ReactNode }) {
     async function fetchIdeas() {
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/content?token=${user}`,
+          `${import.meta.env.VITE_API_URL}/content?token=${user}`
         );
         if (!res.ok) {
           throw new Error('Failed to fetch ideas');

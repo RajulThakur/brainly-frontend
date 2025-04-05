@@ -26,7 +26,7 @@ export default function Signup() {
         body: JSON.stringify(data),
       });
       const resData = await response.json();
-      
+
       if (resData.success) {
         navigate('/auth/signin');
       }
@@ -73,13 +73,14 @@ export default function Signup() {
           <button
             type="button"
             className="absolute right-2 top-1/2 -translate-y-1/2"
-            onClick={() => setShowPassword(!showPassword)}>
+            onClick={() => setShowPassword(!showPassword)}
+          >
             <Eye isOpen={showPassword} />
           </button>
         </div>
 
         <Button varient="primary" text="Sign up" size="lg" />
-        
+
         <p className="text-center text-sm">
           Already have an account?{' '}
           <button

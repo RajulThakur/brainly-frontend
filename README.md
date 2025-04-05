@@ -5,17 +5,20 @@ Brainly is a modern web application that helps you organize and share your digit
 ## Features
 
 - **Content Management**: Easily add and organize different types of content:
+
   - Links
   - Documents
   - Tweets
   - Videos
 
 - **Smart Organization**:
+
   - Tag-based organization system
   - Categorized views for different content types
   - Clean and intuitive user interface
 
 - **Sharing Capabilities**:
+
   - Share your entire collection with others
   - Generate shareable links
   - View shared collections
@@ -28,6 +31,7 @@ Brainly is a modern web application that helps you organize and share your digit
 ## Tech Stack
 
 - **Frontend**:
+
   - React 18.3
   - TypeScript
   - Vite
@@ -64,7 +68,6 @@ VITE_API_BASE_URL=<API_BASE_URL>
 
 VITE_API_URL=your_api_url
 ```
-
 
 4. **Start development server**
 
