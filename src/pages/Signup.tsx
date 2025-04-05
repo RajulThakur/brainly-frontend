@@ -36,31 +36,31 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex h-dvh items-center justify-center bg-gradient-to-b from-accent-700 to-accent-900">
+    <div className="from-accent-700 to-accent-900 flex h-dvh items-center justify-center bg-linear-to-b">
       <form
         className="flex w-80 flex-col gap-4 rounded-lg border border-white/20 bg-white/30 p-6 shadow-lg backdrop-blur-md"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="mb-6 text-5xl font-semibold tracking-wide text-shadow-0">
+        <h1 className="text-shadow-0 mb-6 text-5xl font-semibold tracking-wide">
           Sign Up
         </h1>
         <div className="flex gap-2">
           <input
             {...register('firstName', { required: true })}
             placeholder="First Name"
-            className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+            className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
           />
           <input
             {...register('lastName', { required: true })}
             placeholder="Last Name"
-            className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+            className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
           />
         </div>
         <input
           {...register('userName', { required: true })}
           type="username"
           placeholder="Username"
-          className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+          className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
         />
 
         <div className="relative">
@@ -68,11 +68,11 @@ export default function Signup() {
             {...register('password', { required: true })}
             type={showPassword ? 'text' : 'password'}
             placeholder="Password"
-            className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+            className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
           />
           <button
             type="button"
-            className="absolute right-2 top-1/2 -translate-y-1/2"
+            className="absolute top-1/2 right-2 -translate-y-1/2"
             onClick={() => setShowPassword(!showPassword)}
           >
             <Eye isOpen={showPassword} />

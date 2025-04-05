@@ -36,7 +36,7 @@ export default function IdeaNav(props: IdeaNavProps) {
       <nav className="flex h-12 items-center justify-between gap-2 text-base">
         {props.icon}
         <h1
-          className={`flex-1 cursor-pointer overflow-hidden whitespace-nowrap text-base font-semibold ${
+          className={`flex-1 cursor-pointer overflow-hidden text-base font-semibold whitespace-nowrap ${
             props.light ? 'text-slate-400' : 'text-slate-700'
           } `}
         >
@@ -45,7 +45,7 @@ export default function IdeaNav(props: IdeaNavProps) {
           </a>
         </h1>
 
-        <section className="flex items-center gap-2 hover:text-accent-200">
+        <section className="hover:text-accent-200 flex items-center gap-2">
           {/* <Button
             varient="none"
             size="sm"

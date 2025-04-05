@@ -53,12 +53,12 @@ export default function Popup({ showPopup, setShowPopup }: PopupProps) {
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50"
       onClick={handleOverlayClick}
     >
-      <div className="flex w-96 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/70 px-6 pb-6 pt-2 shadow-xl backdrop-blur-md">
+      <div className="flex w-96 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/70 px-6 pt-2 pb-6 shadow-xl backdrop-blur-md">
         <nav className="flex w-full items-center justify-between">
           <p className="text-3xl font-bold">Share Your Second Brain</p>
         </nav>
         <div className="flex flex-col gap-6">
-          <p className="text-sm font-light leading-5 tracking-wide text-slate-500">
+          <p className="text-sm leading-5 font-light tracking-wide text-slate-500">
             Share your entire collection of notes, documents, links and videos
             with others. They'll be able to import your content into their own
             Second Brain.
@@ -69,7 +69,7 @@ export default function Popup({ showPopup, setShowPopup }: PopupProps) {
                 type="text"
                 value={`${import.meta.env.VITE_APP_URL}/${shareLink}`}
                 disabled
-                className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+                className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
               />
               <Button
                 varient="none"

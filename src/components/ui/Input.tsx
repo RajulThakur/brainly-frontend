@@ -13,7 +13,7 @@ export default function Input({
       type={type}
       id={name}
       placeholder={placeholder}
-      className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+      className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
     />
   );
 }

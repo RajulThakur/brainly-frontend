@@ -58,7 +58,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
   const handleNewTagSubmit = (e: KeyboardEvent | FocusEvent) => {
     if (
       (e as KeyboardEvent).key === 'Enter' ||
-      (e as React.FocusEvent).type === 'blur'
+      (e as React.FocusEvent).type === 'blur-sm'
     ) {
       e.preventDefault();
       if (newTag.trim()) {
@@ -110,11 +110,11 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
       onClick={handleOverlayClick}
     >
       <form
-        className="flex w-80 flex-col gap-4 rounded-lg border border-white/20 bg-white/30 px-6 pb-6 pt-2 shadow-lg backdrop-blur-md"
+        className="flex w-80 flex-col gap-4 rounded-lg border border-white/20 bg-white/30 px-6 pt-2 pb-6 shadow-lg backdrop-blur-md"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold tracking-wide text-shadow-0">
+          <h1 className="text-shadow-0 text-3xl font-bold tracking-wide">
             Add Links
           </h1>
         </div>
@@ -122,12 +122,12 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
         <input
           {...register('title')}
           placeholder="Title"
-          className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+          className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
         />
         <input
           {...register('link')}
           placeholder="https://example.com"
-          className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-none backdrop-blur-sm focus:shadow-sm"
+          className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
         />
 
         <div className="flex flex-col gap-2">
@@ -149,7 +149,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
                 />
                 <label
                   htmlFor={id}
-                  className="cursor-pointer rounded p-2 transition-all duration-200 hover:bg-white/20 peer-checked:bg-white/30 peer-checked:shadow-md"
+                  className="cursor-pointer rounded-sm p-2 transition-all duration-200 peer-checked:bg-white/30 peer-checked:shadow-md hover:bg-white/20"
                 >
                   {icon}
                 </label>
@@ -171,7 +171,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
                 onClick={() => handleTagClick(tag)}
                 className={`rounded-full border px-3 py-1.5 transition-all duration-200 ${
                   selectedTags.includes(tag)
-                    ? 'border-accent-300 bg-accent-300/30 text-accent-0 shadow-sm'
+                    ? 'border-accent-300 bg-accent-300/30 text-accent-0 shadow-xs'
                     : 'border-white/20 bg-white/10 hover:bg-white/20'
                 } text-sm`}
               >
@@ -186,7 +186,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
                 onChange={(e) => setNewTag(e.target.value.slice(0, 15))}
                 onKeyDown={(e) => e.key === 'Enter' && handleNewTagSubmit(e)}
                 onBlur={handleNewTagSubmit}
-                className="min-w-[60px] max-w-[120px] rounded-full border-2 border-dashed border-accent-300/50 bg-accent-900/10 px-3 py-1.5 text-sm outline-none transition-colors duration-200 placeholder:text-accent-500/60 focus:border-accent-300"
+                className="border-accent-300/50 bg-accent-900/10 placeholder:text-accent-500/60 focus:border-accent-300 max-w-[120px] min-w-[60px] rounded-full border-2 border-dashed px-3 py-1.5 text-sm outline-hidden transition-colors duration-200"
                 placeholder="New tag..."
                 style={{ width: `${Math.max(60, newTag.length * 10)}px` }}
               />
@@ -194,7 +194,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
               <button
                 type="button"
                 onClick={() => setIsAddingTag(true)}
-                className="rounded-full border border-accent-300/50 bg-white/10 p-1.5 transition-all duration-200 hover:border-accent-300 hover:bg-accent-300/20"
+                className="border-accent-300/50 hover:border-accent-300 hover:bg-accent-300/20 rounded-full border bg-white/10 p-1.5 transition-all duration-200"
               >
                 <Plus />
               </button>

@@ -26,7 +26,7 @@ export default function SharedPage() {
         {name} Notes
       </h1>
       <div className="h-36 flex-1 snap-y overflow-y-scroll scroll-smooth">
-        <div className="grid grid-cols-1 gap-x-4 gap-y-6 fold:grid-cols-2 md:grid-cols-3 lg:gap-x-4 lg:gap-y-8 xl:grid-cols-4 2xl:grid-cols-5 min-[1600px]:grid-cols-6">
+        <div className="fold:grid-cols-2 grid grid-cols-1 gap-x-4 gap-y-6 min-[1600px]:grid-cols-6 md:grid-cols-3 lg:gap-x-4 lg:gap-y-8 xl:grid-cols-4 2xl:grid-cols-5">
           {sharedIdea.map((idea) => (
             <SharedIdeaComponent key={idea._id} {...idea} />
           ))}

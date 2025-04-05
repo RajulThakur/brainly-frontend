@@ -7,7 +7,7 @@ interface CrossButtonProps {
 export default function CrossButton({ onClick }: CrossButtonProps) {
   return (
     <div
-      className="absolute right-0 top-0 flex -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-white/90 p-1"
+      className="absolute top-0 right-0 flex translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/90 p-1"
       onClick={onClick}
     >
       <Cross />
