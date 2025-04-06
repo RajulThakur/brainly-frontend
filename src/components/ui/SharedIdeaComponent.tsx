@@ -12,9 +12,11 @@ export default function SharedIdeaComponent(idea: IdeaComponentProps) {
         <h1
           className={`flex-1 cursor-pointer overflow-hidden text-base font-semibold whitespace-nowrap ${
             idea.light ? 'text-slate-400' : 'text-slate-700'
-          } `}
-        >
-          <a href={idea.link} target="_blank" rel="noreferrer">
+          } `}>
+          <a
+            href={idea.link}
+            target="_blank"
+            rel="noreferrer">
             {idea.title}
           </a>
         </h1>
@@ -28,9 +30,15 @@ export default function SharedIdeaComponent(idea: IdeaComponentProps) {
       </div>
       <section className="flex flex-col gap-2">
         <div className="flex flex-wrap gap-1">
-          <Tags tags={idea.tags} light={idea.light} />
+          <Tags
+            tags={idea.tags}
+            light={idea.light}
+          />
         </div>
-        <Date date={idea.createdAt} light={idea.light} />
+        <Date
+          date={idea.createdAt}
+          light={idea.light}
+        />
       </section>
     </div>
   );

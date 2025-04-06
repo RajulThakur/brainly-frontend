@@ -83,17 +83,11 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
 
   const onSubmit = async (data: FormData) => {
     console.log('data', data);
-    const submitData = {
-      ...data,
-      tags: selectedTags,
-      token: user,
-    };
+    const submitData = { ...data, tags: selectedTags, token: user };
     const res = await fetch(`${import.meta.env.VITE_API_URL}/content`, {
       method: 'POST',
       body: JSON.stringify(submitData),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
     });
     const addedIdea = await res.json();
@@ -107,12 +101,10 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50"
-      onClick={handleOverlayClick}
-    >
+      onClick={handleOverlayClick}>
       <form
         className="flex w-80 flex-col gap-4 rounded-lg border border-white/20 bg-white/30 px-6 pt-2 pb-6 shadow-lg backdrop-blur-md"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+        onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center justify-between">
           <h1 className="text-shadow-0 text-3xl font-bold tracking-wide">
             Add Links
@@ -139,7 +131,9 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
               { id: 'documents', icon: <Document /> },
               { id: 'videos', icon: <Video /> },
             ].map(({ id, icon }) => (
-              <div key={id} className="flex flex-col items-center gap-2">
+              <div
+                key={id}
+                className="flex flex-col items-center gap-2">
                 <input
                   {...register('type')}
                   type="radio"
@@ -149,8 +143,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
                 />
                 <label
                   htmlFor={id}
-                  className="cursor-pointer rounded-sm p-2 transition-all duration-200 peer-checked:bg-white/30 peer-checked:shadow-md hover:bg-white/20"
-                >
+                  className="cursor-pointer rounded-sm p-2 transition-all duration-200 peer-checked:bg-white/30 peer-checked:shadow-md hover:bg-white/20">
                   {icon}
                 </label>
               </div>
@@ -173,8 +166,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
                   selectedTags.includes(tag)
                     ? 'border-accent-300 bg-accent-300/30 text-accent-0 shadow-xs'
                     : 'border-white/20 bg-white/10 hover:bg-white/20'
-                } text-sm`}
-              >
+                } text-sm`}>
                 {tag}
               </button>
             ))}
@@ -194,15 +186,18 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
               <button
                 type="button"
                 onClick={() => setIsAddingTag(true)}
-                className="border-accent-300/50 hover:border-accent-300 hover:bg-accent-300/20 rounded-full border bg-white/10 p-1.5 transition-all duration-200"
-              >
+                className="border-accent-300/50 hover:border-accent-300 hover:bg-accent-300/20 rounded-full border bg-white/10 p-1.5 transition-all duration-200">
                 <Plus />
               </button>
             )}
           </div>
         </div>
 
-        <Button varient="primary" text="Add" size="lg" />
+        <Button
+          varient="primary"
+          text="Add"
+          size="lg"
+        />
         <CrossButton onClick={onClose} />
       </form>
     </div>

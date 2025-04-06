@@ -34,8 +34,7 @@ export default function Button(props: ButtonProps) {
   return (
     <button
       className={`flex items-center justify-center tracking-wide ${size(props.size)} transition-all duration-200 ease-out ${varient(props.varient)}`}
-      onClick={props.onClick}
-    >
+      onClick={props.onClick}>
       {props.startIcon}
       {props.text}
       {props.endIcon}

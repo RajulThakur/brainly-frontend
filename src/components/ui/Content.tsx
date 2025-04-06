@@ -10,8 +10,7 @@ export default function Content(props: ContentProps) {
     case 'text':
       return (
         <p
-          className={`overflow-hidden text-base leading-5 font-light tracking-wide ${props.light ? 'text-slate-400' : 'text-slate-600'}`}
-        >
+          className={`overflow-hidden text-base leading-5 font-light tracking-wide ${props.light ? 'text-slate-400' : 'text-slate-600'}`}>
           {props.content}
         </p>
       );
@@ -30,8 +29,7 @@ export default function Content(props: ContentProps) {
         <p
           className={`overflow-hidden text-base leading-5 font-light tracking-wide ${
             props.light ? 'text-slate-400' : 'text-slate-600'
-          }`}
-        >
+          }`}>
           {props.content}
         </p>
       );

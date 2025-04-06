@@ -7,6 +7,7 @@ import SharedPage from './pages/SharedPage';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Extension from './pages/Extension';
+import LandingPage from './pages/Home';
 
 function AppRoutes() {
   const { user } = useAuth();
@@ -14,12 +15,22 @@ function AppRoutes() {
   return (
     <Routes>
       <Route
+        path="/home"
+        element={<LandingPage />}
+      />
+      <Route
         path="/"
         element={
           user ? (
-            <Navigate to="/app/all" replace />
+            <Navigate
+              to="/app/all"
+              replace
+            />
           ) : (
-            <Navigate to="/auth/signin" replace />
+            <Navigate
+              to="/auth/signin"
+              replace
+            />
           )
         }
       />
@@ -31,17 +42,41 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route path="/share" element={<SharedPage />} />
+      <Route
+        path="/share"
+        element={<SharedPage />}
+      />
       <Route path="auth">
         <Route
           path="signin"
-          element={user ? <Navigate to="/app/all" replace /> : <Signin />}
+          element={
+            user ? (
+              <Navigate
+                to="/app/all"
+                replace
+              />
+            ) : (
+              <Signin />
+            )
+          }
         />
         <Route
           path="signup"
-          element={user ? <Navigate to="/app/all" replace /> : <Signup />}
+          element={
+            user ? (
+              <Navigate
+                to="/app/all"
+                replace
+              />
+            ) : (
+              <Signup />
+            )
+          }
         />
-        <Route path="extension" element={<Extension />} />
+        <Route
+          path="extension"
+          element={<Extension />}
+        />
       </Route>
     </Routes>
   );
@@ -50,11 +85,7 @@ function AppRoutes() {
 export default function App() {
   return (
     <BrowserRouter
-      future={{
-        v7_relativeSplatPath: true,
-        v7_startTransition: true,
-      }}
-    >
+      future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <AuthProvider>
         <IdeaProvider>
           <AppRoutes />

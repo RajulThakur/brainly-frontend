@@ -20,9 +20,7 @@ export default function Signup() {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
       const resData = await response.json();
@@ -39,8 +37,7 @@ export default function Signup() {
     <div className="from-accent-700 to-accent-900 flex h-dvh items-center justify-center bg-linear-to-b">
       <form
         className="flex w-80 flex-col gap-4 rounded-lg border border-white/20 bg-white/30 p-6 shadow-lg backdrop-blur-md"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+        onSubmit={handleSubmit(onSubmit)}>
         <h1 className="text-shadow-0 mb-6 text-5xl font-semibold tracking-wide">
           Sign Up
         </h1>
@@ -73,21 +70,23 @@ export default function Signup() {
           <button
             type="button"
             className="absolute top-1/2 right-2 -translate-y-1/2"
-            onClick={() => setShowPassword(!showPassword)}
-          >
+            onClick={() => setShowPassword(!showPassword)}>
             <Eye isOpen={showPassword} />
           </button>
         </div>
 
-        <Button varient="primary" text="Sign up" size="lg" />
+        <Button
+          varient="primary"
+          text="Sign up"
+          size="lg"
+        />
 
         <p className="text-center text-sm">
           Already have an account?{' '}
           <button
             type="button"
             onClick={() => navigate('/auth/signin')}
-            className="text-blue-600 hover:underline"
-          >
+            className="text-blue-600 hover:underline">
             Sign in
           </button>
         </p>

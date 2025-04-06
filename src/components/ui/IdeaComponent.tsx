@@ -36,9 +36,15 @@ export default function IdeaComponent(idea: IdeaComponentProps) {
       </div>
       <section className="flex flex-col gap-2">
         <div className="flex flex-wrap gap-1">
-          <Tags tags={idea.tags} light={idea.light} />
+          <Tags
+            tags={idea.tags}
+            light={idea.light}
+          />
         </div>
-        <Date date={idea.createdAt} light={idea.light} />
+        <Date
+          date={idea.createdAt}
+          light={idea.light}
+        />
       </section>
     </div>
   );

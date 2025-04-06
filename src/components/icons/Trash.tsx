@@ -17,8 +17,7 @@ export default function Trash(props: { varient?: 'sm' | 'md' }) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`${size()}`}
-    >
+      className={`${size()}`}>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

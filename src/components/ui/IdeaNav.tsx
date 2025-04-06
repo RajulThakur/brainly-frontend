@@ -18,13 +18,8 @@ export default function IdeaNav(props: IdeaNavProps) {
   const handleDelete = async () => {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/delete`, {
       method: 'DELETE',
-      body: JSON.stringify({
-        postId: props._id,
-        token: user,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: JSON.stringify({ postId: props._id, token: user }),
+      headers: { 'Content-Type': 'application/json' },
     });
     if (res.ok) {
       setIdeas(ideas.filter((idea) => idea._id !== props._id));
@@ -38,9 +33,11 @@ export default function IdeaNav(props: IdeaNavProps) {
         <h1
           className={`flex-1 cursor-pointer overflow-hidden text-base font-semibold whitespace-nowrap ${
             props.light ? 'text-slate-400' : 'text-slate-700'
-          } `}
-        >
-          <a href={props.link} target="_blank" rel="noreferrer">
+          } `}>
+          <a
+            href={props.link}
+            target="_blank"
+            rel="noreferrer">
             {props.title}
           </a>
         </h1>

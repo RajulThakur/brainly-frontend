@@ -30,12 +30,8 @@ export default function Popup({ showPopup, setShowPopup }: PopupProps) {
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/brain/share`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          token: user,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: user }),
         credentials: 'include',
       });
       if (res.ok) {
@@ -51,8 +47,7 @@ export default function Popup({ showPopup, setShowPopup }: PopupProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50"
-      onClick={handleOverlayClick}
-    >
+      onClick={handleOverlayClick}>
       <div className="flex w-96 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/70 px-6 pt-2 pb-6 shadow-xl backdrop-blur-md">
         <nav className="flex w-full items-center justify-between">
           <p className="text-3xl font-bold">Share Your Second Brain</p>

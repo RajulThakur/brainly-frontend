@@ -34,14 +34,12 @@ export default function MainNav({
       <div className="flex md:hidden">
         <button
           className="bg-accent-700/10 rounded-full p-2"
-          onClick={() => setShowPopup(true)}
-        >
+          onClick={() => setShowPopup(true)}>
           <Share />
         </button>
         <button
           className="bg-accent-700/10 rounded-full p-2"
-          onClick={() => setShowAddIdea(true)}
-        >
+          onClick={() => setShowAddIdea(true)}>
           <Plus />
         </button>
       </div>
