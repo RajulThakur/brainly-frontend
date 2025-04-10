@@ -8,6 +8,7 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Extension from './pages/Extension';
 import LandingPage from './pages/Home';
+import Test from './pages/Test';
 
 function AppRoutes() {
   const { user } = useAuth();
@@ -17,6 +18,10 @@ function AppRoutes() {
       <Route
         path="/home"
         element={<LandingPage />}
+      />
+      <Route
+        path="test"
+        element={<Test />}
       />
       <Route
         path="/"

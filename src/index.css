@@ -33,3 +33,22 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 }
+.clip-mask {
+  -webkit-mask-image: url('/assets/mask.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('/assets/mask.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+@layer utilities {
+  .ring-glow {
+    --glow-color: var(--color-accent-0);
+    --glow-spread-color: rgba(81, 71, 228, 0.2);
+    --enhanced-glow-color: rgba(81, 71, 228, 0.8);
+    --btn-color: rgb(81, 71, 228);
+  }
+}
