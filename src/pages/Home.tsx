@@ -22,7 +22,7 @@ const Aside = () => {
         />
         Brainly
       </h1>
-      <ul className="fold:text-sm flex flex-1 flex-row justify-between text-xs tracking-wide md:text-base lg:justify-start lg:gap-4 lg:text-xl xl:flex-col xl:px-4">
+      <ul className="fold:text-sm flex flex-1 flex-row justify-between text-xs tracking-wide md:text-base lg:justify-start lg:gap-4 lg:text-xl flex-col xl:px-4">
         {sidebarItems.map((item) => (
           <li
             className="hover:text-accent-0 relative flex w-auto flex-1 flex-col items-center justify-start gap-1 text-slate-700 capitalize transition-all duration-200 lg:flex-row lg:justify-start lg:gap-3"
@@ -164,7 +164,7 @@ const ShareBrainCard = () => (
 
 const FeaturesSection = () => (
   <section className="flex mt-30 flex-col gap-10 px-40">
-    <div className="grid grid-cols-2 justify-items-center gap-10 px-30">
+    <div className="grid grid-cols-2 justify-items-center gap-10 px-0 xl:px-30">
       {/* Save in One Click */}
       <div className=" relative flex h-150 w-full flex-col justify-between gap-6 rounded-3xl py-16 pr-8 pl-16">
         <div
@@ -238,9 +238,9 @@ export default function Example() {
     <>
       <Navabar />
       <IntroSection />
-      <BookmarkSection />
+      {/* <BookmarkSection /> */}
       <Supercharged/>
-      <FeaturesSection />
+      {/* <FeaturesSection /> */}
     </>
   );
 }
