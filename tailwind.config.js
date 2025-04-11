@@ -30,7 +30,9 @@ export default {
           },
         },
       },
-      animation: { glow: 'glow 2s cubic-bezier(0.4, 0, 0.8, 1) infinite' },
+      animation: {
+        glow: 'glow 2s cubic-bezier(0.4, 0, 0.8, 1) infinite',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],

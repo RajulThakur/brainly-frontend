@@ -21,7 +21,7 @@ function Navabar() {
   ];
 
   return (
-    <nav className="fixed top-7 right-2/12 left-2/12 flex h-16 items-center justify-between rounded-md bg-slate-800/5 px-7 shadow-sm backdrop-blur-md">
+    <nav className="fixed top-7 right-2/12 left-2/12 z-50 flex h-16 items-center justify-between rounded-md bg-slate-800/5 px-7 shadow-sm backdrop-blur-md">
       <Link
         to="/"
         className="flex items-center gap-2">

@@ -5,7 +5,6 @@ import Plus from '../icons/Plus';
 import Tweet from '../icons/Tweet';
 import Video from '../icons/Video';
 import Button from './Button';
-// import { X } from "lucide-react";
 import { FocusEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { useIdeas } from '../../context/IdeaContext';
 import CrossButton from './CrossButton';
@@ -82,7 +81,6 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
   }, [isAddingTag]);
 
   const onSubmit = async (data: FormData) => {
-    console.log('data', data);
     const submitData = { ...data, tags: selectedTags, token: user };
     const res = await fetch(`${import.meta.env.VITE_API_URL}/content`, {
       method: 'POST',
@@ -94,6 +92,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
     console.log(addedIdea, 'addedIdea');
     if (res.ok) {
       reset();
+      onClose();
       setIdeas([...ideas, addedIdea.data]);
     }
   };
@@ -192,7 +191,6 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
             )}
           </div>
         </div>
-
         <Button
           varient="primary"
           text="Add"
