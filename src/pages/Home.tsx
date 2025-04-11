@@ -93,7 +93,7 @@ const Supercharged = () => {
         </div>
         <Aside />
       </div>
-      <h2 className="items-center text-center text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
+      <h2 className="items-center text-center text-5xl sm:text-7xl font-semibold tracking-tight text-balance text-gray-900 md:text-8xl">
         Your Workflow,
         <br />
         <span className="from-accent-600 to-accent-0 animate-charging bg-gradient-to-r bg-clip-text text-transparent">
