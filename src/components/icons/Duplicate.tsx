@@ -1,4 +1,5 @@
-export default function Duplicate() {
+import { IconProps, size } from './Types';
+export default function Duplicate({ varient }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +7,7 @@ export default function Duplicate() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-5">
+      className={`${size(varient)}`}>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
