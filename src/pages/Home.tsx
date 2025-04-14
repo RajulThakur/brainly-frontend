@@ -1,5 +1,4 @@
 import {ReactNode} from 'react';
-import Duplicate from '../components/icons/Duplicate';
 import Plus from '../components/icons/Plus';
 import Trash from '../components/icons/Trash';
 import Tweet from '../components/icons/Tweet';
@@ -158,24 +157,24 @@ const PreviewCard = () => (
   </div>
 );
 
-const ShareBrainCard = () => (
-  <div className="h-auto w-96 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/70 px-6 pt-2 pb-6 shadow-md backdrop-blur-md">
-    <nav className="flex w-full items-center justify-between">
-      <p className="text-3xl font-bold">Share Your Second Brain</p>
-    </nav>
-    <div className="flex flex-col gap-6">
-      <p className="text-sm leading-5 font-light tracking-wide text-slate-500">
-        Meet Your Second Brain &#128064; for the Web
-      </p>
-      <div className="flex w-full flex-col gap-2">
-        <button className="flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/20 px-4 py-2 text-lg tracking-wide text-slate-800 backdrop-blur-xs transition-all duration-200 ease-out hover:scale-[1.02] hover:bg-white/30 hover:shadow-lg active:scale-[0.98] lg:px-4 lg:py-3 lg:text-xl">
-          <Duplicate />
-          Share Brain
-        </button>
-      </div>
-    </div>
-  </div>
-);
+// const ShareBrainCard = () => (
+//   <div className="h-auto w-96 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/70 px-6 pt-2 pb-6 shadow-md backdrop-blur-md">
+//     <nav className="flex w-full items-center justify-between">
+//       <p className="text-3xl font-bold">Share Your Second Brain</p>
+//     </nav>
+//     <div className="flex flex-col gap-6">
+//       <p className="text-sm leading-5 font-light tracking-wide text-slate-500">
+//         Meet Your Second Brain &#128064; for the Web
+//       </p>
+//       <div className="flex w-full flex-col gap-2">
+//         <button className="flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/20 px-4 py-2 text-lg tracking-wide text-slate-800 backdrop-blur-xs transition-all duration-200 ease-out hover:scale-[1.02] hover:bg-white/30 hover:shadow-lg active:scale-[0.98] lg:px-4 lg:py-3 lg:text-xl">
+//           <Duplicate />
+//           Share Brain
+//         </button>
+//       </div>
+//     </div>
+//   </div>
+// );
 
 const FeaturesSection = () => {
   const card = [
