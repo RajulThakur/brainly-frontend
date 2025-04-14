@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
-import {useSearchParams} from 'react-router-dom';
 import {IdeaComponentProps} from '../components/ui/IdeaComponent';
 import SharedIdeaComponent from '../components/ui/SharedIdeaComponent';
+import { useSearchParams } from 'react-router';
 export default function SharedPage() {
   const [searchParams] = useSearchParams();
   const [sharedIdea, setSharedIdea] = useState<IdeaComponentProps[]>([]);

@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
 import AddIdea from '../components/ui/AddIdea';
 import {IdeaComponentProps} from '../components/ui/IdeaComponent';
 import MainNav from '../components/ui/MainNav';
@@ -8,6 +7,7 @@ import Sidebar from '../components/ui/Sidebar';
 import {useIdeas} from '../context/IdeaContext';
 import {IdeaType} from '../interface/Interface';
 import Dashboard from './Dashboard';
+import { useParams } from 'react-router';
 
 export default function AppLayout() {
   const {id} = useParams();

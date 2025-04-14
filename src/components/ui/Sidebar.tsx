@@ -1,4 +1,4 @@
-import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router';
 import {IdeaType} from '../../interface/Interface';
 import Type from '../icons/Type';
 

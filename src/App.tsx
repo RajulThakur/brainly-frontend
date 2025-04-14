@@ -1,4 +1,4 @@
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router';
 import {AuthProvider, useAuth} from './context/AuthContext';
 import {IdeaProvider} from './context/IdeaContext';
 import AppLayout from './pages/AppLayout';
@@ -89,8 +89,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter
-      future={{v7_relativeSplatPath: true, v7_startTransition: true}}>
+    <BrowserRouter>
       <AuthProvider>
         <IdeaProvider>
           <AppRoutes />
