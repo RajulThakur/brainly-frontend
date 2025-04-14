@@ -1,6 +1,6 @@
 function IntroSection() {
   return (
-    <div className="flex snap-start snap-always h-dvh w-dvw bg-white">
+    <div className="flex h-dvh w-dvw snap-start snap-always bg-white">
       <div className="relative isolate flex w-full items-center justify-center px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
@@ -24,7 +24,7 @@ function IntroSection() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="https://brainly-100x.vercel.app/app/all"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Get started
               </a>

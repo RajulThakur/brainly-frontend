@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom';
 function Navabar() {
   const navigation = [
     {name: 'Features', href: '#features'},
-    {name: 'Pricing', href: '#pricing'},
+    // {name: 'Pricing', href: '#pricing'},
     {name: 'Extension', href: '#extension'},
+    {name: 'Demo', href: '#demo'},
   ];
 
   const authLinks = [
@@ -28,11 +29,11 @@ function Navabar() {
         <div className="h-8 w-8 overflow-hidden">
           <img
             src="/image.png"
-            alt="Brainly"
+            alt="Bookmarq"
             className="h-full w-full object-contain"
           />
         </div>
-        <h1 className="font-bold text-gray-900">Brainly</h1>
+        <h1 className="font-bold text-gray-900">Bookmarq</h1>
       </Link>
 
       <div className="hidden items-center gap-6 md:flex">

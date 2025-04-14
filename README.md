@@ -1,6 +1,6 @@
-# Brainly - Your Second Brain
+# Bookmarq - Your Second Brain
 
-Brainly is a modern web application that helps you organize and share your digital content, acting as your second brain. Built with React, TypeScript, and Vite, it offers a seamless experience for managing various types of content including links, documents, tweets, and videos.
+Bookmarq is a modern web application that helps you organize and share your digital content, acting as your second brain. Built with React, TypeScript, and Vite, it offers a seamless experience for managing various types of content including links, documents, tweets, and videos.
 
 ## Features
 
@@ -50,7 +50,7 @@ Brainly is a modern web application that helps you organize and share your digit
 ```bash
 git clone <repository-url>
 
-cd brainly-frontend
+cd bookmarq-frontend
 ```
 
 2. **Install dependencies**
@@ -65,7 +65,6 @@ Create a `.env` file in the root directory:
 
 ```bash
 VITE_API_BASE_URL=<API_BASE_URL>
-
 VITE_API_URL=your_api_url
 ```
 

@@ -9,7 +9,7 @@ export interface KeyConfig {
   alt?: string;
   fontSize?: string;
   isGlowing?: boolean;
-  width?:string;
+  width?: string;
   delay?: string;
   position?: KeyPosition;
   icon?: ReactNode;
@@ -147,7 +147,7 @@ const commandRow: KeyConfig[] = [
 
 export default function Keyboard() {
   return (
-    <div className="clip-mask py-1 inset-0 mt-10 hidden h-[calc(100dvw/2.7317073171)] text-[calc(100dvw/75)] max-w-dvw grid-rows-[.8fr_repeat(5,1.6fr)] gap-[calc(100dvw/136)] sm:grid ">
+    <div className="clip-mask inset-0 mt-10 hidden h-[calc(100dvw/2.7317073171)] max-w-dvw grid-rows-[.8fr_repeat(5,1.6fr)] gap-[calc(100dvw/136)] py-1 text-[calc(100dvw/75)] sm:grid">
       <div className={`${rowStyle} opacity-40" grid-cols-[repeat(13,1.75fr)]`}>
         {functionRow.map((keyConfig, index) => (
           <KeyboardKey

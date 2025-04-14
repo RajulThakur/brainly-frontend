@@ -21,7 +21,7 @@ export default function KeyboardKey({
       className={` ${baseKeyStyles} ${isGlowing && glowingStyles} `}
       style={
         {
-          fontSize:fontSize,
+          fontSize: fontSize,
           width: width,
           '--delay': delay,
           '--key-bg-start-color': isGlowing ? '#161616' : '#ffffff',

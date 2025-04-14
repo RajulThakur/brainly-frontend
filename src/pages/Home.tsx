@@ -27,10 +27,10 @@ const Aside = () => {
       <h1 className="hidden h-10 flex-1 items-center gap-2 text-2xl font-bold text-slate-800 md:flex md:h-[54px] md:text-4xl lg:flex-none">
         <img
           src="/image.png"
-          alt="Brainly"
+          alt="Bookmarq"
           className="size-6 md:size-8"
         />
-        Brainly
+        Bookmarq
       </h1>
       <ul className="fold:text-sm grid flex-1 grid-cols-2 flex-col justify-start gap-3 text-xs tracking-wide md:text-base lg:justify-start lg:gap-4 lg:text-xl">
         {sidebarItems.map((item) => (
@@ -48,7 +48,7 @@ const Aside = () => {
   );
 };
 const BookmarkSection = () => (
-  <section className="flex snap-always snap-start h-dvh flex-col justify-evenly">
+  <section className="flex h-dvh snap-start snap-always flex-col justify-evenly">
     <Keyboard />
     <div className="flex flex-col gap-7">
       <div className="flex h-24 w-dvw justify-center gap-5">
@@ -81,7 +81,7 @@ const BookmarkSection = () => (
 );
 const Supercharged = () => {
   return (
-    <section className="relative snap-always snap-start flex h-dvh w-dvw items-center justify-center">
+    <section className="relative flex h-dvh w-dvw snap-start snap-always items-center justify-center">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
@@ -165,7 +165,7 @@ const ShareBrainCard = () => (
     </nav>
     <div className="flex flex-col gap-6">
       <p className="text-sm leading-5 font-light tracking-wide text-slate-500">
-        Meet Your Second Brain 🧠 for the Web
+        Meet Your Second Brain &#128064; for the Web
       </p>
       <div className="flex w-full flex-col gap-2">
         <button className="flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/20 px-4 py-2 text-lg tracking-wide text-slate-800 backdrop-blur-xs transition-all duration-200 ease-out hover:scale-[1.02] hover:bg-white/30 hover:shadow-lg active:scale-[0.98] lg:px-4 lg:py-3 lg:text-xl">
@@ -190,7 +190,7 @@ const FeaturesSection = () => {
       id: 2,
       title: 'See Before You Click',
       description:
-        'Get a clean visual preview of every link you save. Instantly know what’s behind the URL.',
+        'Get a clean visual preview of every link you save. Instantly know what&apos;s behind the URL.',
       child: <PreviewCard />,
     },
     // {
@@ -201,7 +201,9 @@ const FeaturesSection = () => {
     // },
   ];
   return (
-    <section className="mt-30 h-dvh justify-center items-center snap-always snap-start flex flex-col md:px-7 lg:px-15 2xl:px-40">
+    <section
+      id="features"
+      className="mt-30 flex h-dvh snap-start snap-always flex-col items-center justify-center md:px-7 lg:px-15 2xl:px-40">
       <div className="grid grid-cols-1 justify-items-center gap-x-8 gap-y-5 md:gap-y-20 lg:grid-cols-2">
         {card.map((item, index) => (
           <FeatureCard
@@ -274,10 +276,10 @@ const FeatureCard = ({
 );
 export default function Home() {
   return (
-    <div className='snap-y snap-always snap-mandatory h-dvh overflow-scroll'>
+    <div className="h-dvh snap-y snap-mandatory snap-always overflow-scroll">
       <Navabar />
       <IntroSection />
-      <Demo/>
+      <Demo />
       <FeaturesSection />
       <Supercharged />
       <BookmarkSection />

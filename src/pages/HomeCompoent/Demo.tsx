@@ -1,6 +1,8 @@
 export default function Demo() {
   return (
-    <div className="relative flex h-dvh w-full snap-start items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16">
+    <section
+      id="demo"
+      className="relative flex h-dvh w-full snap-start items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16">
       <div className="absolute inset-4 -z-10 overflow-hidden rounded-2xl transition-all duration-300 sm:inset-8 sm:rounded-3xl md:inset-12 md:rounded-[2rem] lg:inset-18">
         <div className="h-full w-full scale-[0.98] bg-[url(/assets/desktop.png)] bg-contain bg-center bg-no-repeat transition-transform duration-500 hover:scale-100" />
       </div>
@@ -15,6 +17,6 @@ export default function Demo() {
           disablePictureInPicture
         />
       </div>
-    </div>
+    </section>
   );
 }
