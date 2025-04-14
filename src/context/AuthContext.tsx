@@ -1,15 +1,15 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import {createContext, ReactNode, useContext, useState} from 'react';
 
 const AuthContext = createContext<{
   user: string | null;
   setUser: (user: string | null) => void;
-}>({ user: null, setUser: () => {} });
+}>({user: null, setUser: () => {}});
 
-function AuthProvider({ children }: { children: ReactNode }) {
+function AuthProvider({children}: {children: ReactNode}) {
   const token: string | null = localStorage.getItem('token') || null;
   const [user, setUser] = useState<string | null>(token);
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{user, setUser}}>
       {children}
     </AuthContext.Provider>
   );
@@ -22,4 +22,4 @@ const useAuth = () => {
   }
   return context;
 };
-export { AuthProvider, useAuth };
+export {AuthProvider, useAuth};

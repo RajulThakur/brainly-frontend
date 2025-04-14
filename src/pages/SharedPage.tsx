@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { IdeaComponentProps } from '../components/ui/IdeaComponent';
+import {useEffect, useState} from 'react';
+import {useSearchParams} from 'react-router-dom';
+import {IdeaComponentProps} from '../components/ui/IdeaComponent';
 import SharedIdeaComponent from '../components/ui/SharedIdeaComponent';
 export default function SharedPage() {
   const [searchParams] = useSearchParams();
@@ -12,7 +12,7 @@ export default function SharedPage() {
       const res = await fetch(
         `${import.meta.env.VITE_API_URL}/brain/share?shareid=${shareId}`
       );
-      const { content } = await res.json();
+      const {content} = await res.json();
       const shareContent = content.sharedContent;
       setSharedIdea(shareContent);
       setName(content.sharedBy);

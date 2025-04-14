@@ -1,4 +1,4 @@
-import { ContentType } from '../../interface/Interface';
+import {ContentType} from '../../interface/Interface';
 
 interface ContentProps {
   type: ContentType;

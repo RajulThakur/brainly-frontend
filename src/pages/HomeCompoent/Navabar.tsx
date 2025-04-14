@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Navabar() {
   const navigation = [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Extension', href: '#extension' },
+    {name: 'Features', href: '#features'},
+    {name: 'Pricing', href: '#pricing'},
+    {name: 'Extension', href: '#extension'},
   ];
 
   const authLinks = [
@@ -21,7 +21,7 @@ function Navabar() {
   ];
 
   return (
-    <nav className="fixed top-7 nav:right-2/12 nav:left-2/12 right-1/12 left-1/12 z-50 flex h-16 items-center justify-between rounded-md bg-slate-800/5 px-3 md:px-7 shadow-sm backdrop-blur-md">
+    <nav className="nav:right-2/12 nav:left-2/12 fixed top-7 right-1/12 left-1/12 z-50 flex h-16 items-center justify-between rounded-md bg-slate-800/5 px-3 shadow-sm backdrop-blur-md md:px-7">
       <Link
         to="/"
         className="flex items-center gap-2">
@@ -35,7 +35,7 @@ function Navabar() {
         <h1 className="font-bold text-gray-900">Brainly</h1>
       </Link>
 
-      <div className="md:flex items-center gap-6 hidden">
+      <div className="hidden items-center gap-6 md:flex">
         {navigation.map((item) => (
           <a
             key={item.name}

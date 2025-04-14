@@ -1,8 +1,8 @@
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import Eye from '../components/icons/Eye';
 import Button from '../components/ui/Button';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 interface SignupForm {
   firstName: string;
@@ -14,13 +14,13 @@ interface SignupForm {
 export default function Signup() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const { register, handleSubmit } = useForm<SignupForm>();
+  const {register, handleSubmit} = useForm<SignupForm>();
 
   const onSubmit = async (data: SignupForm) => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data),
       });
       const resData = await response.json();
@@ -43,18 +43,18 @@ export default function Signup() {
         </h1>
         <div className="flex gap-2">
           <input
-            {...register('firstName', { required: true })}
+            {...register('firstName', {required: true})}
             placeholder="First Name"
             className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
           />
           <input
-            {...register('lastName', { required: true })}
+            {...register('lastName', {required: true})}
             placeholder="Last Name"
             className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
           />
         </div>
         <input
-          {...register('userName', { required: true })}
+          {...register('userName', {required: true})}
           type="username"
           placeholder="Username"
           className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
@@ -62,7 +62,7 @@ export default function Signup() {
 
         <div className="relative">
           <input
-            {...register('password', { required: true })}
+            {...register('password', {required: true})}
             type={showPassword ? 'text' : 'password'}
             placeholder="Password"
             className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"

@@ -6,5 +6,6 @@
   "plugins": ["prettier-plugin-tailwindcss"],
   "bracketSameLine": true,
   "singleAttributePerLine": true,
-  "objectWrap": "collapse"
+  "objectWrap": "collapse",
+  "bracketSpacing": false
 }

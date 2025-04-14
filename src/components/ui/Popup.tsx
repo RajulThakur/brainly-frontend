@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import Duplicate from '../icons/Duplicate';
 import Button from './Button';
 import CrossButton from './CrossButton';
-import { useAuth } from '../../context/AuthContext';
+import {useAuth} from '../../context/AuthContext';
 interface PopupProps {
   showPopup: boolean;
   setShowPopup: (showPopup: boolean) => void;
 }
-export default function Popup({ showPopup, setShowPopup }: PopupProps) {
+export default function Popup({showPopup, setShowPopup}: PopupProps) {
   const [isSharing, setIsSharing] = useState<boolean>(false);
   const [shareLink, setShareLink] = useState<string>('');
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);
-  const { user } = useAuth();
+  const {user} = useAuth();
   if (!showPopup) return null;
   function handleOverlayClick(e: React.MouseEvent) {
     if (e.target === e.currentTarget) {
@@ -30,13 +30,13 @@ export default function Popup({ showPopup, setShowPopup }: PopupProps) {
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/brain/share`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: user }),
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({token: user}),
         credentials: 'include',
       });
       if (res.ok) {
         console.log('Brain shared');
-        const { link } = await res.json();
+        const {link} = await res.json();
         setShareLink(link);
         setIsSharing(true);
       }

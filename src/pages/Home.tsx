@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 import Duplicate from '../components/icons/Duplicate';
 import Plus from '../components/icons/Plus';
 import Trash from '../components/icons/Trash';
 import Tweet from '../components/icons/Tweet';
 import Type from '../components/icons/Type';
-import { IdeaType } from '../interface/Interface';
+import {IdeaType} from '../interface/Interface';
 import IconRenderer from './HomeCompoent/IconRenderer';
 import Keyboard from './HomeCompoent/Keyboard';
 import KeyboardKey from './HomeCompoent/KeyboardKeys';
@@ -23,7 +23,7 @@ const sidebarItems = [
 const Aside = () => {
   return (
     <aside className="grid h-full w-full flex-col gap-2 rounded-md py-1 md:gap-5 md:py-3">
-      <h1 className="md:flex hidden h-10 flex-1 items-center gap-2 text-2xl font-bold text-slate-800 md:h-[54px] md:text-4xl lg:flex-none">
+      <h1 className="hidden h-10 flex-1 items-center gap-2 text-2xl font-bold text-slate-800 md:flex md:h-[54px] md:text-4xl lg:flex-none">
         <img
           src="/image.png"
           alt="Brainly"
@@ -229,8 +229,8 @@ const FeatureCard = ({
   <div
     className={`relative flex h-auto w-full rounded-3xl px-14 py-4 text-start ${
       isSpan
-        ? 'col-span-full lg:h-80 md:justify-between flex-col md:flex-row'
-        : ' max-w-4xl lg:flex-col md:gap-4 flex-col '
+        ? 'col-span-full flex-col md:flex-row md:justify-between lg:h-80'
+        : 'max-w-4xl flex-col md:gap-4 lg:flex-col'
     } ${
       !isSpan && (isReverse ? 'md:flex-row-reverse' : 'md:flex-row')
     } md:items-start lg:text-start`}>
@@ -253,7 +253,7 @@ const FeatureCard = ({
 
     {/* Content */}
     <div
-      className={`flex flex-col justify-evenly gap-1 md:gap-3 ${isReverse ? 'md:text-end' : 'md:text-start'} lg:text-start md:max-w-[400px]`}>
+      className={`flex flex-col justify-evenly gap-1 md:gap-3 ${isReverse ? 'md:text-end' : 'md:text-start'} md:max-w-[400px] lg:text-start`}>
       <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-5xl">
         {title}
       </h1>
@@ -263,9 +263,7 @@ const FeatureCard = ({
     </div>
 
     {/* Children */}
-    <div>
-      {children}
-    </div>
+    <div>{children}</div>
   </div>
 );
 export default function Example() {

@@ -1,7 +1,7 @@
 import Type from '../icons/Type';
 import Content from './Content';
 import Date from './Date';
-import { IdeaComponentProps } from './IdeaComponent';
+import {IdeaComponentProps} from './IdeaComponent';
 import Tags from './Tags';
 
 export default function SharedIdeaComponent(idea: IdeaComponentProps) {

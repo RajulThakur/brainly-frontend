@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 
 function DetailComponent() {
   const features = [
@@ -38,10 +38,10 @@ function DetailComponent() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              transition={{duration: 0.5, delay: index * 0.2}}
+              viewport={{once: true}}
               className="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10">
               <div className="mb-4">
                 <div className="bg-accent-50 mb-6 flex h-12 w-12 items-center justify-center rounded-lg text-2xl">
@@ -56,7 +56,7 @@ function DetailComponent() {
               </div>
 
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{scale: 1.05}}
                 className="bg-accent-50 text-accent-600 hover:bg-accent-100 mt-6 cursor-pointer rounded-lg px-4 py-2.5 text-center text-sm font-semibold">
                 Learn more
               </motion.div>

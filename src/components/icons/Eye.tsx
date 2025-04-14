@@ -1,4 +1,4 @@
-export default function Eye({ isOpen }: { isOpen: boolean }) {
+export default function Eye({isOpen}: {isOpen: boolean}) {
   if (isOpen) {
     return (
       <svg

@@ -1,5 +1,5 @@
-import { IconProps, size } from './Types';
-export default function Duplicate({ varient }: IconProps) {
+import {IconProps, size} from './Types';
+export default function Duplicate({varient}: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

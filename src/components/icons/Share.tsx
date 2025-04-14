@@ -1,4 +1,4 @@
-export default function Share(props: { varient?: 'sm' | 'md' }) {
+export default function Share(props: {varient?: 'sm' | 'md'}) {
   const size = () => {
     switch (props.varient) {
       case 'sm':

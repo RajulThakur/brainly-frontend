@@ -1,4 +1,4 @@
-export default function Trash(props: { varient?: 'sm' | 'md' }) {
+export default function Trash(props: {varient?: 'sm' | 'md'}) {
   const size = () => {
     switch (props.varient) {
       case 'sm':

@@ -1,9 +1,9 @@
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import Eye from '../components/icons/Eye';
 import Button from '../components/ui/Button';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {useAuth} from '../context/AuthContext';
 
 interface SigninForm {
   userName: string;
@@ -11,16 +11,16 @@ interface SigninForm {
 }
 
 export default function Signin() {
-  const { setUser } = useAuth();
+  const {setUser} = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const { register, handleSubmit } = useForm<SigninForm>();
+  const {register, handleSubmit} = useForm<SigninForm>();
 
   const onSubmit = async (data: SigninForm) => {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/signin`, {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
       credentials: 'include',
     });
     const resData = await res.json();
@@ -42,7 +42,7 @@ export default function Signin() {
         <input
           placeholder="Username"
           className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
-          {...register('userName', { required: true })}
+          {...register('userName', {required: true})}
         />
 
         <div className="relative">
@@ -50,7 +50,7 @@ export default function Signin() {
             type={showPassword ? 'text' : 'password'}
             placeholder="Password"
             className="w-full rounded-md border border-white/20 bg-white/20 p-2 outline-hidden backdrop-blur-xs focus:shadow-xs"
-            {...register('password', { required: true })}
+            {...register('password', {required: true})}
           />
           <button
             type="button"

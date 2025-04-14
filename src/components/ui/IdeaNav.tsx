@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { useIdeas } from '../../context/IdeaContext';
+import {ReactNode} from 'react';
+import {useIdeas} from '../../context/IdeaContext';
 // import Share from '../icons/Share';
 import Trash from '../icons/Trash';
 import Button from './Button';
-import { useAuth } from '../../context/AuthContext';
+import {useAuth} from '../../context/AuthContext';
 interface IdeaNavProps {
   _id: string;
   isShared?: boolean;
@@ -13,13 +13,13 @@ interface IdeaNavProps {
   light?: boolean;
 }
 export default function IdeaNav(props: IdeaNavProps) {
-  const { user } = useAuth();
-  const { ideas, setIdeas } = useIdeas();
+  const {user} = useAuth();
+  const {ideas, setIdeas} = useIdeas();
   const handleDelete = async () => {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/delete`, {
       method: 'DELETE',
-      body: JSON.stringify({ postId: props._id, token: user }),
-      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({postId: props._id, token: user}),
+      headers: {'Content-Type': 'application/json'},
     });
     if (res.ok) {
       setIdeas(ideas.filter((idea) => idea._id !== props._id));

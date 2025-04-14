@@ -4,7 +4,7 @@ import ChevronRight from '../../components/icons/Chevron-Right';
 import ChevronUp from '../../components/icons/Chevron-Up';
 import Command from '../../components/icons/Command';
 import Option from '../../components/icons/Option';
-import { IconProps } from '../../components/icons/Types';
+import {IconProps} from '../../components/icons/Types';
 
 type IconName =
   | 'chevron-up'

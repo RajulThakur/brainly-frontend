@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import AddIdea from '../components/ui/AddIdea';
-import { IdeaComponentProps } from '../components/ui/IdeaComponent';
+import {IdeaComponentProps} from '../components/ui/IdeaComponent';
 import MainNav from '../components/ui/MainNav';
 import Popup from '../components/ui/Popup';
 import Sidebar from '../components/ui/Sidebar';
-import { useIdeas } from '../context/IdeaContext';
-import { IdeaType } from '../interface/Interface';
+import {useIdeas} from '../context/IdeaContext';
+import {IdeaType} from '../interface/Interface';
 import Dashboard from './Dashboard';
 
 export default function AppLayout() {
-  const { id } = useParams();
+  const {id} = useParams();
   const [showAddIdea, setShowAddIdea] = useState(false);
   const [activeFilter, setActiveFilter] = useState<IdeaType | 'all'>('all');
   const [filterIdeas, setFilterIdeas] = useState<IdeaComponentProps[]>([]);
-  const { ideas } = useIdeas();
+  const {ideas} = useIdeas();
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   useEffect(() => {

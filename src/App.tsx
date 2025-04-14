@@ -1,6 +1,6 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { IdeaProvider } from './context/IdeaContext';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {AuthProvider, useAuth} from './context/AuthContext';
+import {IdeaProvider} from './context/IdeaContext';
 import AppLayout from './pages/AppLayout';
 import ProtectedRoute from './pages/ProtectedRoute';
 import SharedPage from './pages/SharedPage';
@@ -11,7 +11,7 @@ import LandingPage from './pages/Home';
 import Test from './pages/Test';
 
 function AppRoutes() {
-  const { user } = useAuth();
+  const {user} = useAuth();
 
   return (
     <Routes>
@@ -90,7 +90,7 @@ function AppRoutes() {
 export default function App() {
   return (
     <BrowserRouter
-      future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
+      future={{v7_relativeSplatPath: true, v7_startTransition: true}}>
       <AuthProvider>
         <IdeaProvider>
           <AppRoutes />

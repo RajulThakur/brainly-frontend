@@ -3,7 +3,7 @@ interface TagsProps {
   light?: boolean;
 }
 
-export default function Tags({ tags, light }: TagsProps) {
+export default function Tags({tags, light}: TagsProps) {
   return tags.map((tag) => (
     <span
       key={tag}

@@ -1,4 +1,4 @@
-import { ContentType, IdeaType } from '../../interface/Interface';
+import {ContentType, IdeaType} from '../../interface/Interface';
 import Content from './Content';
 import Date from './Date';
 import Tags from './Tags';

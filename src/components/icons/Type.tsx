@@ -3,8 +3,8 @@ import Video from './Video';
 import Links from './Links';
 import Tags from './Tags';
 import Tweet from './Tweet';
-import { ReactNode } from 'react';
-import { IdeaType } from '../../interface/Interface';
+import {ReactNode} from 'react';
+import {IdeaType} from '../../interface/Interface';
 import Image from './Image';
 import Globe from './Globe';
 import Play from './Play';
@@ -14,20 +14,20 @@ export interface TypeProps {
 export default function Type(props: TypeProps): ReactNode {
   switch (props.type) {
     case 'documents':
-      return <Document varient='md' />;
+      return <Document varient="md" />;
     case 'videos':
       return <Video />;
     case 'tweets':
       return <Tweet />;
     case 'links':
-      return <Links varient='md'/>;
+      return <Links varient="md" />;
     case 'tags':
       return <Tags />;
     case 'images':
-      return <Image varient='md'/>;
+      return <Image varient="md" />;
     case 'youtube':
-      return <Play varient='md'/>;
+      return <Play varient="md" />;
     case 'other':
-      return <Globe varient='md' />;
+      return <Globe varient="md" />;
   }
 }

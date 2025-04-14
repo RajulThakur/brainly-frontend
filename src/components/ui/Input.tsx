@@ -1,12 +1,12 @@
-import { InputHTMLAttributes } from 'react';
-import { useForm } from 'react-hook-form';
+import {InputHTMLAttributes} from 'react';
+import {useForm} from 'react-hook-form';
 
 export default function Input({
   name,
   placeholder,
   type,
 }: InputHTMLAttributes<HTMLInputElement>) {
-  const { register } = useForm();
+  const {register} = useForm();
   return (
     <input
       {...register(name ?? '')}

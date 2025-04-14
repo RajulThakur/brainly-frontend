@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 import Plus from '../icons/Plus';
 import Share from '../icons/Share';
 import Button from './Button';

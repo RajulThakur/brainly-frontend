@@ -1,14 +1,14 @@
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import Document from '../icons/Document';
 import Links from '../icons/Links';
 import Plus from '../icons/Plus';
 import Tweet from '../icons/Tweet';
 import Video from '../icons/Video';
 import Button from './Button';
-import { FocusEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
-import { useIdeas } from '../../context/IdeaContext';
+import {FocusEvent, KeyboardEvent, useEffect, useRef, useState} from 'react';
+import {useIdeas} from '../../context/IdeaContext';
 import CrossButton from './CrossButton';
-import { useAuth } from '../../context/AuthContext';
+import {useAuth} from '../../context/AuthContext';
 
 interface AddIdeaProps {
   onClose: () => void;
@@ -30,14 +30,14 @@ const PREDEFINED_TAGS = [
   'API',
 ];
 
-export default function AddIdea({ onClose }: AddIdeaProps) {
+export default function AddIdea({onClose}: AddIdeaProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isAddingTag, setIsAddingTag] = useState(false);
   const [newTag, setNewTag] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  const { ideas, setIdeas } = useIdeas();
-  const { user } = useAuth();
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const {ideas, setIdeas} = useIdeas();
+  const {user} = useAuth();
+  const {register, handleSubmit, reset} = useForm<FormData>();
 
   const handleTagClick = (tag: string) => {
     setSelectedTags((prev) =>
@@ -81,11 +81,11 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
   }, [isAddingTag]);
 
   const onSubmit = async (data: FormData) => {
-    const submitData = { ...data, tags: selectedTags, token: user };
+    const submitData = {...data, tags: selectedTags, token: user};
     const res = await fetch(`${import.meta.env.VITE_API_URL}/content`, {
       method: 'POST',
       body: JSON.stringify(submitData),
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
       credentials: 'include',
     });
     const addedIdea = await res.json();
@@ -125,11 +125,11 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
           {/* <label className='text-sm font-normal'>Type</label> */}
           <div className="flex justify-between gap-4 rounded-md px-3">
             {[
-              { id: 'tweets', icon: <Tweet /> },
-              { id: 'links', icon: <Links /> },
-              { id: 'documents', icon: <Document /> },
-              { id: 'videos', icon: <Video /> },
-            ].map(({ id, icon }) => (
+              {id: 'tweets', icon: <Tweet />},
+              {id: 'links', icon: <Links />},
+              {id: 'documents', icon: <Document />},
+              {id: 'videos', icon: <Video />},
+            ].map(({id, icon}) => (
               <div
                 key={id}
                 className="flex flex-col items-center gap-2">
@@ -179,7 +179,7 @@ export default function AddIdea({ onClose }: AddIdeaProps) {
                 onBlur={handleNewTagSubmit}
                 className="border-accent-300/50 bg-accent-900/10 placeholder:text-accent-500/60 focus:border-accent-300 max-w-[120px] min-w-[60px] rounded-full border-2 border-dashed px-3 py-1.5 text-sm outline-hidden transition-colors duration-200"
                 placeholder="New tag..."
-                style={{ width: `${Math.max(60, newTag.length * 10)}px` }}
+                style={{width: `${Math.max(60, newTag.length * 10)}px`}}
               />
             ) : (
               <button

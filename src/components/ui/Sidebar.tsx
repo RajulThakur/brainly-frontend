@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import { IdeaType } from '../../interface/Interface';
+import {useNavigate} from 'react-router-dom';
+import {IdeaType} from '../../interface/Interface';
 import Type from '../icons/Type';
 
 export default function Sidebar({

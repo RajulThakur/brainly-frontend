@@ -1,12 +1,6 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import { IdeaComponentProps } from '../components/ui/IdeaComponent';
-import { useAuth } from './AuthContext';
+import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
+import {IdeaComponentProps} from '../components/ui/IdeaComponent';
+import {useAuth} from './AuthContext';
 
 interface IdeaContextType {
   ideas: IdeaComponentProps[];
@@ -18,9 +12,9 @@ const IdeaContext = createContext<IdeaContextType>({
   setIdeas: () => {},
 });
 
-function IdeaProvider({ children }: { children: ReactNode }) {
+function IdeaProvider({children}: {children: ReactNode}) {
   const [ideas, setIdeas] = useState<IdeaComponentProps[]>([]);
-  const { user } = useAuth();
+  const {user} = useAuth();
   useEffect(() => {
     async function fetchIdeas() {
       try {
@@ -30,7 +24,7 @@ function IdeaProvider({ children }: { children: ReactNode }) {
         if (!res.ok) {
           throw new Error('Failed to fetch ideas');
         }
-        const { data } = await res.json();
+        const {data} = await res.json();
         setIdeas(data);
       } catch (error) {
         console.error('Error fetching ideas:', error);
@@ -40,7 +34,7 @@ function IdeaProvider({ children }: { children: ReactNode }) {
     fetchIdeas();
   }, [user]);
   return (
-    <IdeaContext.Provider value={{ ideas, setIdeas }}>
+    <IdeaContext.Provider value={{ideas, setIdeas}}>
       {children}
     </IdeaContext.Provider>
   );
@@ -53,4 +47,4 @@ function useIdeas() {
   return context;
 }
 
-export { IdeaProvider, useIdeas };
+export {IdeaProvider, useIdeas};

@@ -1,7 +1,7 @@
 function IntroSection() {
   return (
-    <div className="bg-white h-dvh w-dvw flex ">
-      <div className="relative flex w-full justify-center items-center isolate px-6 pt-14 lg:px-8">
+    <div className="flex h-dvh w-dvw bg-white">
+      <div className="relative isolate flex w-full items-center justify-center px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
@@ -53,4 +53,3 @@ function IntroSection() {
 }
 
 export default IntroSection;
-
