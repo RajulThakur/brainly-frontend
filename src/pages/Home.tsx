@@ -10,6 +10,7 @@ import Keyboard from './HomeCompoent/Keyboard';
 import KeyboardKey from './HomeCompoent/KeyboardKeys';
 import Navabar from './HomeCompoent/Navabar';
 import IntroSection from './HomeCompoent/IntroSection';
+import Demo from './HomeCompoent/Demo';
 const sidebarItems = [
   'tweets',
   'videos',
@@ -47,13 +48,14 @@ const Aside = () => {
   );
 };
 const BookmarkSection = () => (
-  <section className="flex h-dvh flex-col justify-evenly">
+  <section className="flex snap-always snap-start h-dvh flex-col justify-evenly">
     <Keyboard />
     <div className="flex flex-col gap-7">
       <div className="flex h-24 w-dvw justify-center gap-5">
         <KeyboardKey
           primary="command"
           width="138.5px"
+          fontSize="24px"
           icon={
             <IconRenderer
               name="command"
@@ -65,7 +67,11 @@ const BookmarkSection = () => (
         <span className="my-auto">
           <Plus varient="2xl" />
         </span>
-        <KeyboardKey primary="B" />
+        <KeyboardKey
+          primary="B"
+          fontSize="24px"
+          width="106px"
+        />
       </div>
       <h2 className="text-center text-5xl font-semibold">
         Easy command to Bookmark
@@ -75,7 +81,7 @@ const BookmarkSection = () => (
 );
 const Supercharged = () => {
   return (
-    <section className="relative flex h-dvh w-dvw items-center justify-center">
+    <section className="relative snap-always snap-start flex h-dvh w-dvw items-center justify-center">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
@@ -105,7 +111,7 @@ const Supercharged = () => {
         <Aside />
       </div>
       <h2 className="items-center text-center text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl md:text-8xl">
-        Your Workflow,
+        Your Workflow
         <br />
         <span className="from-accent-600 to-accent-0 animate-charging bg-gradient-to-r bg-clip-text text-transparent">
           Supercharged.
@@ -187,15 +193,15 @@ const FeaturesSection = () => {
         'Get a clean visual preview of every link you save. Instantly know what’s behind the URL.',
       child: <PreviewCard />,
     },
-    {
-      id: 3,
-      title: 'Share Smarter, Not Harder',
-      description: 'Instantly share your saved links with friends',
-      child: <ShareBrainCard />,
-    },
+    // {
+    //   id: 3,
+    //   title: 'Share Smarter, Not Harder',
+    //   description: 'Instantly share your saved links with friends',
+    //   child: <ShareBrainCard />,
+    // },
   ];
   return (
-    <section className="mt-30 flex flex-col md:px-7 lg:px-15 2xl:px-40">
+    <section className="mt-30 h-dvh justify-center items-center snap-always snap-start flex flex-col md:px-7 lg:px-15 2xl:px-40">
       <div className="grid grid-cols-1 justify-items-center gap-x-8 gap-y-5 md:gap-y-20 lg:grid-cols-2">
         {card.map((item, index) => (
           <FeatureCard
@@ -266,14 +272,15 @@ const FeatureCard = ({
     <div>{children}</div>
   </div>
 );
-export default function Example() {
+export default function Home() {
   return (
-    <>
-      {/* <Navabar />
-      <IntroSection /> */}
+    <div className='snap-y snap-always snap-mandatory h-dvh overflow-scroll'>
+      <Navabar />
+      <IntroSection />
+      <Demo/>
+      <FeaturesSection />
+      <Supercharged />
       <BookmarkSection />
-      {/* <Supercharged/>
-      <FeaturesSection /> */}
-    </>
+    </div>
   );
 }

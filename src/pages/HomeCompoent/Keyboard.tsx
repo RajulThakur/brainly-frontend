@@ -9,6 +9,7 @@ export interface KeyConfig {
   alt?: string;
   fontSize?: string;
   isGlowing?: boolean;
+  width?:string;
   delay?: string;
   position?: KeyPosition;
   icon?: ReactNode;
@@ -98,7 +99,6 @@ const commandRow: KeyConfig[] = [
     primary: 'control',
     icon: (
       <IconRenderer
-        varient="xl"
         name="control"
         position="right"
       />
@@ -108,7 +108,6 @@ const commandRow: KeyConfig[] = [
     primary: 'option',
     icon: (
       <IconRenderer
-        varient="xl"
         name="option"
         position="right"
       />
@@ -120,7 +119,6 @@ const commandRow: KeyConfig[] = [
     isGlowing: true,
     icon: (
       <IconRenderer
-        varient="xl"
         name="command"
         position="right"
       />
@@ -129,10 +127,8 @@ const commandRow: KeyConfig[] = [
   {delay: '0.125s'}, // Space
   {
     primary: 'command',
-    // isGlowing: true,
     icon: (
       <IconRenderer
-        varient="xl"
         name="command"
         position="left"
       />
@@ -142,7 +138,6 @@ const commandRow: KeyConfig[] = [
     primary: 'option',
     icon: (
       <IconRenderer
-        varient="xl"
         name="option"
         position="left"
       />
@@ -152,7 +147,7 @@ const commandRow: KeyConfig[] = [
 
 export default function Keyboard() {
   return (
-    <div className="inset-0 mt-10 grid max-w-dvw grid-rows-[.8fr_repeat(5,1.6fr)] gap-3 rounded-2xl py-6 shadow-xl ring-1 ring-gray-200">
+    <div className="clip-mask py-1 inset-0 mt-10 hidden h-[calc(100dvw/2.7317073171)] text-[calc(100dvw/75)] max-w-dvw grid-rows-[.8fr_repeat(5,1.6fr)] gap-[calc(100dvw/136)] sm:grid ">
       <div className={`${rowStyle} opacity-40" grid-cols-[repeat(13,1.75fr)]`}>
         {functionRow.map((keyConfig, index) => (
           <KeyboardKey

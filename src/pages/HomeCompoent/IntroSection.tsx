@@ -1,6 +1,6 @@
 function IntroSection() {
   return (
-    <div className="flex h-dvh w-dvw bg-white">
+    <div className="flex snap-start snap-always h-dvh w-dvw bg-white">
       <div className="relative isolate flex w-full items-center justify-center px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"

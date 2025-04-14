@@ -42,16 +42,15 @@ const getPositionClasses = (position: IconPosition = 'center') => {
   return positions[position];
 };
 
-export default function IconRenderer({
-  name,
-  position,
-  varient = 'md',
-}: IconRendererProps) {
+export default function IconRenderer({name, position}: IconRendererProps) {
   const IconComponent = iconComponents[name];
   if (!IconComponent) return null;
   return (
     <div className={`flex ${getPositionClasses(position)}`}>
-      <IconComponent varient={varient} />
+      <div
+        className={`flex size-[calc(100dvw/70)] ${getPositionClasses(position)}`}>
+        <IconComponent />
+      </div>
     </div>
   );
 }

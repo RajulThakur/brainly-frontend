@@ -4,15 +4,15 @@ import IconRenderer from './IconRenderer';
 export default function ArrowKeys() {
   const baseArrowKeyStyles = `
   ${baseKeyStyles}
+  text-[calc(100dvw/70)]
   h-auto
   flex items-center justify-center
 `;
   return (
-    <div className="flex items-end justify-between text-gray-800">
+    <div className="grid grid-cols-3 text-gray-800">
       <div className={`${baseArrowKeyStyles} rounded-md`}>
         <IconRenderer
           name="chevron-left"
-          varient="xl"
           position="center"
         />
       </div>
@@ -20,14 +20,12 @@ export default function ArrowKeys() {
         <div className={`${baseArrowKeyStyles} rounded-t-md`}>
           <IconRenderer
             name="chevron-up"
-            varient="xl"
             position="center"
           />
         </div>
         <div className={`${baseArrowKeyStyles} rounded-b-md`}>
           <IconRenderer
             name="chevron-down"
-            varient="xl"
             position="center"
           />
         </div>
@@ -35,7 +33,6 @@ export default function ArrowKeys() {
       <div className={`${baseArrowKeyStyles} rounded-md`}>
         <IconRenderer
           name="chevron-right"
-          varient="xl"
           position="center"
         />
       </div>

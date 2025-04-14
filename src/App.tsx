@@ -1,13 +1,13 @@
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
-import {AuthProvider, useAuth} from './context/AuthContext';
-import {IdeaProvider} from './context/IdeaContext';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { IdeaProvider } from './context/IdeaContext';
 import AppLayout from './pages/AppLayout';
+import Extension from './pages/Extension';
+import Home from './pages/Home';
 import ProtectedRoute from './pages/ProtectedRoute';
 import SharedPage from './pages/SharedPage';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
-import Extension from './pages/Extension';
-import LandingPage from './pages/Home';
 import Test from './pages/Test';
 
 function AppRoutes() {
@@ -17,7 +17,7 @@ function AppRoutes() {
     <Routes>
       <Route
         path="/home"
-        element={<LandingPage />}
+        element={<Home />}
       />
       <Route
         path="test"
