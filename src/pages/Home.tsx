@@ -1,15 +1,16 @@
-import {ReactNode} from 'react';
+import { ReactNode } from 'react';
 import Plus from '../components/icons/Plus';
 import Trash from '../components/icons/Trash';
 import Tweet from '../components/icons/Tweet';
 import Type from '../components/icons/Type';
-import {IdeaType} from '../interface/Interface';
+import { IdeaType } from '../interface/Interface';
+import Demo from './HomeCompoent/Demo';
 import IconRenderer from './HomeCompoent/IconRenderer';
+import IntroSection from './HomeCompoent/IntroSection';
 import Keyboard from './HomeCompoent/Keyboard';
 import KeyboardKey from './HomeCompoent/KeyboardKeys';
 import Navabar from './HomeCompoent/Navabar';
-import IntroSection from './HomeCompoent/IntroSection';
-import Demo from './HomeCompoent/Demo';
+
 const sidebarItems = [
   'tweets',
   'videos',
@@ -277,7 +278,7 @@ export default function Home() {
   return (
     <div className="h-dvh snap-y snap-mandatory snap-always overflow-scroll">
       <Navabar />
-      <IntroSection />
+      <IntroSection/>
       <Demo />
       <FeaturesSection />
       <Supercharged />

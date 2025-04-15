@@ -1,9 +1,8 @@
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router';
-import {AuthProvider, useAuth} from './context/AuthContext';
-import {IdeaProvider} from './context/IdeaContext';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { IdeaProvider } from './context/IdeaContext';
 import AppLayout from './pages/AppLayout';
 import Extension from './pages/Extension';
-import Home from './pages/Home';
 import ProtectedRoute from './pages/ProtectedRoute';
 import SharedPage from './pages/SharedPage';
 import Signin from './pages/Signin';
@@ -15,10 +14,6 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route
-        path="/home"
-        element={<Home />}
-      />
       <Route
         path="test"
         element={<Test />}
