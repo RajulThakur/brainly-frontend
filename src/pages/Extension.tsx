@@ -9,7 +9,7 @@ function Extension() {
       <div className="flex w-80 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/30 p-6 text-center shadow-lg backdrop-blur-md">
         <img
           src="/image.png"
-          alt="Brainly"
+          alt="Bookmarq"
           className="size-16"
         />
         <h1 className="text-shadow-accent-0 text-3xl font-semibold tracking-wide">

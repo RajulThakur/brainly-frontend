@@ -17,10 +17,10 @@ export default function Sidebar({
       <h1 className="flex h-[54px] flex-1 items-center gap-2 text-4xl font-bold text-slate-800 lg:flex-none">
         <img
           src="/image.png"
-          alt="Brainly"
+          alt="Bookmarq"
           className="h-8 w-8"
         />
-        Brainly
+        Bookmarq
       </h1>
       <ul className="fold:text-sm flex flex-1 flex-row justify-between text-xs tracking-wide md:text-base lg:justify-start lg:gap-4 lg:text-xl xl:flex-col xl:px-4">
         {sidebarItems.map((item) => (
