@@ -12,7 +12,7 @@ import { useParams } from 'react-router';
 export default function AppLayout() {
   const {id} = useParams();
   const [showAddIdea, setShowAddIdea] = useState(false);
-  const [activeFilter, setActiveFilter] = useState<IdeaType | 'all'>('all');
+  const [activeFilter, setActiveFilter] = useState<IdeaType | 'all'>(id ? id as IdeaType : 'all');
   const [filterIdeas, setFilterIdeas] = useState<IdeaComponentProps[]>([]);
   const {ideas} = useIdeas();
   const [showPopup, setShowPopup] = useState<boolean>(false);
