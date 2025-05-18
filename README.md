@@ -1,6 +1,6 @@
-# Bookmarq - Your Second Brain
+# Linkcaddy - Your Second Brain
 
-Bookmarq is a modern web application that helps you organize and share your digital content, acting as your second brain. Built with React, TypeScript, and Vite, it offers a seamless experience for managing various types of content including links, documents, tweets, and videos.
+Linkcaddy is a modern web application that helps you organize and share your digital content, acting as your second brain. Built with React, TypeScript, and Vite, it offers a seamless experience for managing various types of content including links, documents, tweets, and videos.
 
 ## Features
 

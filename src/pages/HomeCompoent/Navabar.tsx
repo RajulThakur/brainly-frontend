@@ -28,7 +28,7 @@ function Navabar() {
         className="flex items-center gap-2">
         <div className="h-8 w-8 overflow-hidden">
           <img
-            src="/image.png"
+            src="/image.svg"
             alt="Bookmarq"
             className="h-full w-full object-contain"
           />

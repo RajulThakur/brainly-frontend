@@ -26,11 +26,11 @@ const Aside = () => {
     <aside className="grid h-full w-full flex-col gap-2 rounded-md py-1 md:gap-5 md:py-3">
       <h1 className="hidden h-10 flex-1 items-center gap-2 text-2xl font-bold text-slate-800 md:flex md:h-[54px] md:text-4xl lg:flex-none">
         <img
-          src="/image.png"
-          alt="Bookmarq"
+          src="/image.svg"
+          alt="Linkcaddy"
           className="size-6 md:size-8"
         />
-        Bookmarq
+        Linkcaddy
       </h1>
       <ul className="fold:text-sm grid flex-1 grid-cols-2 flex-col justify-start gap-3 text-xs tracking-wide md:text-base lg:justify-start lg:gap-4 lg:text-xl">
         {sidebarItems.map((item) => (

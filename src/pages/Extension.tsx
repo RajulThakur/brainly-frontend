@@ -8,8 +8,8 @@ function Extension() {
     <div className="from-accent-700 to-accent-900 flex h-dvh items-center justify-center bg-gradient-to-b">
       <div className="flex w-80 flex-col items-center gap-4 rounded-lg border border-white/20 bg-white/30 p-6 text-center shadow-lg backdrop-blur-md">
         <img
-          src="/image.png"
-          alt="Bookmarq"
+          src="/image.svg"
+          alt="Linkcaddy"
           className="size-16"
         />
         <h1 className="text-shadow-accent-0 text-3xl font-semibold tracking-wide">

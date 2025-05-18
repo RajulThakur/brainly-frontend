@@ -13,14 +13,14 @@ export default function Sidebar({
   // const sidebarItems = ['tweets', 'videos', 'links', 'documents', 'tags'];
   const sidebarItems = ['tweets', 'videos', 'links', 'documents'];
   return (
-    <aside className="from-accent-700/10 to-accent-900/10 flex h-auto w-screen flex-col gap-3 border-r border-white/20 bg-linear-to-b px-4 py-2 backdrop-blur-md md:py-2 xl:h-screen xl:w-1/6 xl:max-w-64 xl:gap-6 xl:py-4">
+    <aside className="from-accent-700/10 to-accent-900/10 flex h-auto w-screen flex-col gap-3 border-r border-white/20 bg-linear-to-b px-4 py-2 backdrop-blur-md md:py-2 xl:h-screen xl:w-2/6 xl:max-w-64 xl:gap-6 xl:py-4">
       <h1 className="flex h-[54px] flex-1 items-center gap-2 text-4xl font-bold text-slate-800 lg:flex-none">
         <img
-          src="/image.png"
-          alt="Bookmarq"
+          src="/image.svg"
+          alt="Linkcaddy"
           className="h-8 w-8"
         />
-        Bookmarq
+        Linkcaddy
       </h1>
       <ul className="fold:text-sm flex flex-1 flex-row justify-between text-xs tracking-wide md:text-base lg:justify-start lg:gap-4 lg:text-xl xl:flex-col xl:px-4">
         {sidebarItems.map((item) => (
