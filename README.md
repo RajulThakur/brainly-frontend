@@ -50,7 +50,7 @@ Linkcaddy is a modern web application that helps you organize and share your dig
 ```bash
 git clone <repository-url>
 
-cd bookmarq-frontend
+cd linkcaddy-frontend
 ```
 
 2. **Install dependencies**

@@ -29,11 +29,11 @@ function Navabar() {
         <div className="h-8 w-8 overflow-hidden">
           <img
             src="/image.svg"
-            alt="Bookmarq"
+            alt="linkcaddy"
             className="h-full w-full object-contain"
           />
         </div>
-        <h1 className="font-bold text-gray-900">Bookmarq</h1>
+        <h1 className="font-bold text-gray-900">Linkcaddy</h1>
       </Link>
 
       <div className="hidden items-center gap-6 md:flex">
