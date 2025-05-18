@@ -22,7 +22,7 @@ const size = (size: string) => {
 const varient = (varient: string) => {
   switch (varient) {
     case 'primary':
-      return 'bg-white/20 backdrop-blur-xs border border-white/20 text-slate-800 hover:bg-white/30 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]';
+      return 'bg-accent-300 backdrop-blur-xs border border-white/20 text-white hover:bg-accent-400 hover:shadow-lg hover:scale-[1.01] active:scale-[0.95]';
     case 'secondary':
       return 'bg-slate-800/20 backdrop-blur-xs border border-white/10 text-slate-200 hover:bg-slate-800/30 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]';
     case 'none':
