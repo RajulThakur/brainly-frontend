@@ -9,6 +9,9 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Test from './pages/Test';
 import Home from './pages/Home';
+import PrivacyPolicy from './pages/Extra/PrivacyPolicy';
+import TermsOfService from './pages/Extra/TermsOfService';
+import CookiePolicy from './pages/Extra/CookiePolicy';
 
 function AppRoutes() {
   const {user} = useAuth();
@@ -81,6 +84,20 @@ function AppRoutes() {
         <Route
           path="extension"
           element={<Extension />}
+        />
+      </Route>
+      <Route path="legal">
+        <Route
+          path="privacy"
+          element={<PrivacyPolicy />}
+        />
+        <Route
+          path="terms"
+          element={<TermsOfService />}
+        />
+        <Route
+          path="cookies"
+          element={<CookiePolicy />}
         />
       </Route>
     </Routes>

@@ -4,6 +4,7 @@ import Trash from '../components/icons/Trash';
 import Tweet from '../components/icons/Tweet';
 import Type from '../components/icons/Type';
 import {IdeaType} from '../interface/Interface';
+import {links} from '../constants/links';
 import Demo from './HomeCompoent/Demo';
 import ExtensionDemo from './HomeCompoent/ExtensionDemo';
 import Footer from './HomeCompoent/Footer';
@@ -303,14 +304,18 @@ const ExtensionSection = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="#"
+                href={links.extension.chrome}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-accent-600 hover:bg-accent-700 focus:ring-accent-500 inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-medium text-white shadow-sm focus:ring-2 focus:ring-offset-2 focus:outline-none">
                 Get Chrome Extension
               </a>
               <a
-                href="#"
+                href={links.extension.firefox}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="focus:ring-accent-500 inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:outline-none">
-                Learn More
+                Get Firefox Extension
               </a>
             </div>
           </div>
