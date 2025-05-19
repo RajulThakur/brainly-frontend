@@ -1,10 +1,12 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 import Plus from '../components/icons/Plus';
 import Trash from '../components/icons/Trash';
 import Tweet from '../components/icons/Tweet';
 import Type from '../components/icons/Type';
-import { IdeaType } from '../interface/Interface';
+import {IdeaType} from '../interface/Interface';
 import Demo from './HomeCompoent/Demo';
+import ExtensionDemo from './HomeCompoent/ExtensionDemo';
+import Footer from './HomeCompoent/Footer';
 import IconRenderer from './HomeCompoent/IconRenderer';
 import IntroSection from './HomeCompoent/IntroSection';
 import Keyboard from './HomeCompoent/Keyboard';
@@ -48,7 +50,7 @@ const Aside = () => {
   );
 };
 const BookmarkSection = () => (
-  <section className="flex h-dvh snap-start snap-always flex-col justify-evenly">
+  <section className="flex flex-col justify-evenly gap-28 py-20">
     <Keyboard />
     <div className="flex flex-col gap-7">
       <div className="flex h-24 w-dvw justify-center gap-5">
@@ -274,15 +276,70 @@ const FeatureCard = ({
     <div>{children}</div>
   </div>
 );
+
+const ExtensionSection = () => {
+  return (
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-center py-20">
+      <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+        <div
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+          className="from-accent-300 to-accent-600 relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        />
+      </div>
+
+      <div className="container mx-auto px-4">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
+          <div className="flex flex-col justify-center">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+              Browser Extension
+            </h2>
+            <p className="mb-8 text-lg text-gray-600">
+              Save content from anywhere on the web with our powerful browser
+              extension. One click is all it takes to add links, images, and
+              more to your second brain.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#"
+                className="bg-accent-600 hover:bg-accent-700 focus:ring-accent-500 inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-medium text-white shadow-sm focus:ring-2 focus:ring-offset-2 focus:outline-none">
+                Get Chrome Extension
+              </a>
+              <a
+                href="#"
+                className="focus:ring-accent-500 inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:outline-none">
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="relative mx-auto w-[370px]">
+              <div className="from-accent-600 to-accent-400 absolute -inset-4 rounded-2xl bg-gradient-to-r opacity-20 blur"></div>
+              <ExtensionDemo />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   return (
-    <div className="h-dvh snap-y snap-mandatory snap-always overflow-scroll">
+    <div className="h-dvh overflow-scroll">
       <Navabar />
-      <IntroSection/>
+      <IntroSection />
       <Demo />
       <FeaturesSection />
       <Supercharged />
       <BookmarkSection />
+      <ExtensionSection />
+      <div className="relative">
+        <div className="from-accent-50/30 absolute inset-0 bg-gradient-to-b to-white"></div>
+        <Footer />
+      </div>
     </div>
   );
 }

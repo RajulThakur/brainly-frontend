@@ -65,7 +65,7 @@ export default function Signup() {
           </div>
           <div className="flex flex-col gap-1.5 flex-1">
             <label className="text-sm font-medium text-gray-700">Last Name</label>
-            <input
+          <input
               {...register('lastName', {
                 required: 'Last name is required',
                 minLength: {
@@ -102,8 +102,8 @@ export default function Signup() {
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium text-gray-700">Password</label>
-          <div className="relative">
-            <input
+        <div className="relative">
+          <input
               {...register('password', {
                 required: 'Password is required',
                 minLength: {
@@ -111,16 +111,16 @@ export default function Signup() {
                   message: 'Password must be at least 6 characters',
                 },
               })}
-              type={showPassword ? 'text' : 'password'}
+            type={showPassword ? 'text' : 'password'}
               placeholder="Create a password"
               className="w-full rounded-lg border border-gray-300 bg-white/80 p-3 text-gray-900 placeholder:text-gray-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20"
-            />
-            <button
-              type="button"
+          />
+          <button
+            type="button"
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-              onClick={() => setShowPassword(!showPassword)}>
-              <Eye isOpen={showPassword} />
-            </button>
+            onClick={() => setShowPassword(!showPassword)}>
+            <Eye isOpen={showPassword} />
+          </button>
           </div>
           {errors.password && (
             <span className="text-sm text-red-500">{errors.password.message}</span>
