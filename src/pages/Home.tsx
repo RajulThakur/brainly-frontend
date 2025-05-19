@@ -4,15 +4,15 @@ import Trash from '../components/icons/Trash';
 import Tweet from '../components/icons/Tweet';
 import Type from '../components/icons/Type';
 import {IdeaType} from '../interface/Interface';
-import {links} from '../constants/links';
 import Demo from './HomeCompoent/Demo';
 import ExtensionDemo from './HomeCompoent/ExtensionDemo';
-import Footer from './HomeCompoent/Footer';
 import IconRenderer from './HomeCompoent/IconRenderer';
 import IntroSection from './HomeCompoent/IntroSection';
 import Keyboard from './HomeCompoent/Keyboard';
 import KeyboardKey from './HomeCompoent/KeyboardKeys';
 import Navabar from './HomeCompoent/Navabar';
+import { links } from '../constants/links';
+import Footer from './HomeCompoent/Footer';
 
 const sidebarItems = [
   'tweets',
